@@ -1,0 +1,21 @@
+task,subset,comparison,n,accuracy_difference,ci_low,ci_high,share_of_draws_above_0,weighted_difference,w_ci_low,w_ci_high
+service,all,hybrid − lexicon (proposed),134,0.127,0.052,0.207,1.0,0.098,0.039,0.169
+service,all,lexicon: proposed − none,134,0.0,-0.02,0.02,0.354,-0.002,-0.013,0.006
+service,all,lexicon: proposed − colloquial,134,-0.015,-0.047,0.009,0.101,-0.009,-0.025,0.003
+overall,all,transformer − lexicon (both proposed),298,0.097,0.046,0.159,1.0,0.098,0.05,0.16
+overall,all,lexicon: proposed − none,298,0.007,-0.009,0.023,0.735,0.003,-0.007,0.012
+overall,all,lexicon: proposed − colloquial,298,0.003,-0.024,0.027,0.543,0.004,-0.011,0.017
+overall,all,lexicon: combined − colloquial,298,0.01,-0.011,0.032,0.78,0.006,-0.006,0.018
+overall,all,transformer: proposed − none,298,0.003,-0.007,0.015,0.609,0.0,-0.004,0.004
+service,all,hybrid − transformer whole review (both proposed),134,0.007,-0.033,0.043,0.569,-0.001,-0.023,0.016
+service,all,transformer whole review − lexicon (proposed),134,0.119,0.046,0.198,1.0,0.099,0.041,0.172
+service,Indonesian/Manadonese,hybrid − lexicon (proposed),100,0.16,0.065,0.252,0.999,0.122,0.041,0.213
+service,Indonesian/Manadonese,lexicon: proposed − none,100,0.0,-0.032,0.026,0.357,-0.003,-0.02,0.009
+service,Indonesian/Manadonese,lexicon: proposed − colloquial,100,-0.02,-0.07,0.017,0.104,-0.012,-0.037,0.005
+overall,Indonesian/Manadonese,transformer − lexicon (both proposed),227,0.119,0.058,0.18,1.0,0.103,0.052,0.161
+overall,Indonesian/Manadonese,lexicon: proposed − none,227,0.009,-0.012,0.032,0.731,0.003,-0.009,0.016
+overall,Indonesian/Manadonese,lexicon: proposed − colloquial,227,0.004,-0.03,0.037,0.565,0.005,-0.013,0.023
+overall,Indonesian/Manadonese,lexicon: combined − colloquial,227,0.013,-0.015,0.043,0.785,0.008,-0.008,0.026
+overall,Indonesian/Manadonese,transformer: proposed − none,227,0.004,-0.009,0.02,0.614,0.0,-0.005,0.005
+service,Indonesian/Manadonese,hybrid − transformer whole review (both proposed),100,0.0,-0.047,0.05,0.421,-0.005,-0.034,0.019
+service,Indonesian/Manadonese,transformer whole review − lexicon (proposed),100,0.16,0.064,0.248,0.998,0.127,0.043,0.222

@@ -1,0 +1,29 @@
+# Prompt used to build the normalization dictionary (Section 2.2)
+# Model: Gemini 3 Flash Thinking, Gemini web application, May 2026 (sampling settings not exposed).
+# Source: "NLP Original Run (Gemini Flash 3 High Thinking).pdf" in this folder. Words are verbatim;
+# only the line breaks, lost in the PDF export, were restored. The attached file top_words_raw.csv
+# (300 most frequent words of the translated corpus) is in pipeline/data/input/.
+# The three re-runs (Gemini 3.8 Flash, October 2026) sent the same text from a template in which
+# "300" was left as the unfilled placeholder {top_n} and the JSON braces appeared doubled ({{ }}).
+
+Peran: Kamu adalah pakar linguistik dialek Manado (Sulawesi Utara) dan asisten penelitian NLP.
+
+Konteks Data:
+1. Saya sedang membangun pipeline NLP untuk menganalisis ulasan restoran di Google Maps dari wilayah Sulawesi Utara (Manado, Tomohon, Bitung).
+2. Ulasan sudah melalui proses Google Translate (auto-detect → Bahasa Indonesia), namun kata-kata dialek Manado yang tidak dikenali oleh Google Translate kemungkinan masih tersisa dalam bentuk aslinya.
+3. Saya akan mengunggah file bernama top_words_raw.csv yang berisi daftar 300 kata dengan frekuensi kemunculan tertinggi dari teks hasil terjemahan.
+
+TUGASMU:
+1. Identifikasi kata-kata dalam file tersebut yang merupakan dialek Manado, slang lokal Sulawesi Utara, atau singkatan informal yang TIDAK berhasil diterjemahkan oleh Google Translate.
+2. Untuk setiap kata yang teridentifikasi, berikan padanan kata standar Bahasa Indonesia yang paling tepat.
+3. Kembangkan kamus dengan menambahkan variasi penulisan umum dari kata yang sama (typo, singkatan, pengulangan huruf).
+
+KRITERIA SELEKSI:
+1. HANYA masukkan kata yang benar-benar bukan Bahasa Indonesia standar (dialek, slang, singkatan tidak baku).
+2. JANGAN masukkan kata Bahasa Indonesia baku meskipun frekuensinya tinggi.
+3. JANGAN masukkan nama tempat, nama orang, atau nama merek.
+4. BOLEH menambahkan variasi penulisan yang tidak ada di file jika kamu yakin kata tersebut umum digunakan di konteks ulasan restoran Manado.
+
+FORMAT OUTPUT (JSON siap pakai, tanpa komentar, tanpa penjelasan): { "slang_atau_singkatan": "kata_standar_bahasa_indonesia", "contoh_nda": "tidak", "contoh_torang": "kami" }
+
+Jika kamu sudah mengerti instruksi ini, jawab dengan "Saya mengerti. Silakan unggah file top_words_raw.csv Anda."

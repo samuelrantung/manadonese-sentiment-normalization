@@ -1,0 +1,24 @@
+GOLD-SET DETAILS (agreed labels unless stated)
+
+1. CLASS DISTRIBUTION AND MAJORITY-CLASS BASELINE
+  service polarity (n = 119): negative 87, neutral 1, positive 31  -> always predicting negative: accuracy 0.731
+    reweighted to the corpus rating mix: negative 0.427, neutral 0.003, positive 0.570  -> always predicting positive: accuracy 0.570
+  overall polarity (n = 241): negative 98, neutral 25, positive 118  -> always predicting positive: accuracy 0.490
+    reweighted to the corpus rating mix: negative 0.174, neutral 0.056, positive 0.770  -> always predicting positive: accuracy 0.770
+
+2. CORRECT PREDICTIONS PER GOLD CLASS
+  service polarity:
+    lexicon X, proposed      negative 55/87, neutral 0/1, positive 30/31
+    hybrid X                 negative 72/87, neutral 0/1, positive 30/31
+  overall polarity:
+    lexicon M, proposed      negative 64/98, neutral 4/25, positive 110/118
+    transformer, proposed    negative 87/98, neutral 2/25, positive 116/118
+
+3. MANADONESE VOCABULARY IN INDONESIAN-LANGUAGE GOLD REVIEWS
+  both annotators : sample 19/228 (8.3%); reweighted to the corpus rating mix 5.0%  [1* 12/58, 2* 2/26, 3* 1/35, 4* 3/53, 5* 1/56]
+  either annotator: sample 27/228 (11.8%); reweighted to the corpus rating mix 6.7%  [1* 17/58, 2* 3/26, 3* 2/35, 4* 4/53, 5* 1/56]
+
+4. FALSE SERVICE DETECTIONS (gold: no mention; lexicon window, proposed: mention)
+  False detections: 34
+  Reviews containing each trigger: pesan 9, sedia 6, saji 5, jam 4, lama 3, ambil 3, perhati 2, kerja 2, bawa 2, bilang 1
+  Triggered only by pesan/sedia/saji/jam: 17

@@ -1,0 +1,28 @@
+# Versions used for the revised analyses (Python 3.14). Install with:  pip install -r requirements.txt
+
+# Core data handling and statistics
+pandas==2.3.3
+numpy==2.5.4
+scipy==1.18.1
+statsmodels==0.15.0
+
+# Step 3 — machine translation to Bahasa Indonesia (do not rerun; see README)
+deep-translator==1.11.4
+
+# Step 5 — Indonesian stop-words and stemming
+nltk==3.10.3
+PySastrawi==1.2.1
+
+# Transformer baseline and hybrid scorer (experiments/indobert_baseline.py)
+transformers==5.19.0
+torch==2.14.1
+huggingface_hub==2.2.0
+
+# Annotation workbooks, figures and logging
+openpyxl==3.1.5
+matplotlib==3.11.2
+tqdm==4.70.1
+
+# Step 1 — Google Maps scraping only (skipped when data/input/all_reviews_raw.csv exists)
+outscraper>=5.0,<6.0
+python-dotenv==1.2.4

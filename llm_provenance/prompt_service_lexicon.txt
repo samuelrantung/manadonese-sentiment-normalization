@@ -1,0 +1,31 @@
+# Prompt used to build the service lexicon (Section 2.3)
+# Model: Gemini 3 Flash Thinking, Gemini web application, May 2026 (the same model and month as the
+# original dictionary run; sampling settings not exposed). The attached file top_words.csv (200 most
+# frequent stems after preprocessing) is in pipeline/data/output/. Source: the chat export
+# "Service Lexicon Run (Gemini Flash 3 High Thinking).pdf" in this folder. The text below is the copy kept in
+# pipeline/steps/step7_sentiment_scoring.py (_GEMINI_PROMPT); it matches the export word for word
+# (the export does not show the list numbers 1-3).
+# Gemini returned 50 terms (pipeline/data/submitted_version/service_keywords.txt, same order);
+# terima and kasih were then removed (final lexicon: 48 terms,
+# pipeline/data/input/service_keywords.txt).
+
+Peran: Kamu adalah pakar linguistik dan asisten penelitian untuk Aspect-Based Sentiment Analysis (ABSA) pada ulasan restoran platform Google Maps di Sulawesi Utara.
+Konteks Data:
+1. Saya sedang mengekstraksi Variabel X yaitu "Kualitas Layanan / Employee Behaviour" (Fokus HANYA pada interaksi manusia, staf, dan kecepatan layanan).
+2. Teks ulasan berasal dari bahasa formal, informal, serta dialek lokal Manado yang sudah dinormalisasi.
+3. Teks ulasan SUDAH MELALUI PROSES STEMMING (Sastrawi). Artinya, semua kata di dalam data saya murni berupa KATA DASAR tanpa awalan/akhiran.
+TUGASMU: Saya akan mengunggah file bernama top_words.csv yang berisi daftar 200 kata dengan frekuensi kemunculan tertinggi dari data penelitian saya.
+Tugasmu adalah menyeleksi dan mengekstraksi kata-kata dari file tersebut yang relevan dengan aspek "Kualitas Layanan / Employee Behaviour", lalu kembangkan menjadi daftar kamus kata kunci (Service Quality Lexicon).
+Kriteria Pemilihan & Pengembangan Kata:
+1. Mencakup aktor/subjek layanan (contoh: kasir, staf, koki, pelayan).
+2. Mencakup atribut kinerja karyawan (contoh: ramah, cepat, lambat, lelet, senyum).
+3. Mencakup kata dialek Manado terkait layanan (yang sudah dalam bentuk dasar/normalisasi).
+SANGAT PENTING (BATASAN EXCLUSION):
+1. WAJIB KATA DASAR: Semua kata yang kamu pilih dan kembangkan WAJIB dalam bentuk KATA DASAR (contoh: tulis "layan", jangan "pelayanan").
+2. DILARANG memasukkan kata sentimen global atau evaluasi umum untuk mencegah tumpang tindih variabel kepuasan (seperti: mantap, puas, senang, rekomendasi, buruk, kecewa).
+3. DILARANG memasukkan atribut fisik restoran atau makanan (seperti: nyaman, bersih, kotor, enak, jorok).
+FORMAT OUTPUT: 
+- Tanpa komentar, tanpa penomoran, tanpa duplikasi dari seed words
+- Siap copy-paste langsung ke file .txt
+
+Jika kamu sudah mengerti instruksi ini, jawab dengan "Saya mengerti. Silakan unggah file top_words.csv Anda."

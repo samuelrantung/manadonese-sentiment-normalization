@@ -1,0 +1,45 @@
+task,subset,scorer,n,precision,recall,F1,F1_ci_low,F1_ci_high,accuracy,acc_ci_low,acc_ci_high,macro_F1,acc_weighted,accw_ci_low,accw_ci_high
+1 service mention,all,"lexicon window, no normalization",271,0.79,0.985,0.877,0.829,0.913,,,,,,,
+1 service mention,all,"lexicon window, proposed dictionary",271,0.79,0.985,0.877,0.829,0.913,,,,,,,
+1 service mention,all,surface window (hybrid),271,0.785,0.985,0.874,0.826,0.911,,,,,,,
+2 service polarity,all,"lexicon X, no normalization",119,,,,0.444,0.563,0.714,0.617,0.812,0.506,0.775,0.657,0.876
+2 service polarity,all,"lexicon X, colloquial lexicon",119,,,,0.457,0.576,0.731,0.635,0.829,0.518,0.782,0.665,0.885
+2 service polarity,all,"lexicon X, proposed dictionary",119,,,,0.458,0.562,0.714,0.626,0.802,0.513,0.772,0.657,0.875
+2 service polarity,all,"lexicon X, combined",119,,,,0.46,0.567,0.731,0.645,0.821,0.515,0.78,0.664,0.882
+2 service polarity,all,"lexicon X, re-run 1",119,,,,0.461,0.566,0.714,0.626,0.802,0.516,0.772,0.657,0.875
+2 service polarity,all,"lexicon X, re-run 2",119,,,,0.462,0.559,0.723,0.648,0.795,0.516,0.752,0.627,0.854
+2 service polarity,all,"lexicon X, re-run 3",119,,,,0.467,0.572,0.723,0.637,0.81,0.523,0.754,0.628,0.858
+2 service polarity,all,hybrid X (window + transformer),119,,,,0.525,0.622,0.857,0.791,0.916,0.578,0.885,0.801,0.949
+2 service polarity,all,"transformer, whole review, no normalization",119,,,,0.509,0.62,0.849,0.776,0.913,0.567,0.887,0.798,0.956
+2 service polarity,all,"transformer, whole review, proposed dictionary",119,,,,0.509,0.85,0.857,0.779,0.921,0.565,0.889,0.799,0.958
+3 overall polarity,all,"lexicon M, no normalization",241,,,,0.525,0.641,0.726,0.669,0.782,0.584,0.833,0.765,0.89
+3 overall polarity,all,"lexicon M, colloquial lexicon",241,,,,0.533,0.651,0.726,0.672,0.776,0.594,0.83,0.766,0.886
+3 overall polarity,all,"lexicon M, proposed dictionary",241,,,,0.525,0.645,0.739,0.679,0.794,0.586,0.838,0.775,0.894
+3 overall polarity,all,"lexicon M, combined",241,,,,0.536,0.657,0.743,0.687,0.794,0.598,0.84,0.778,0.896
+3 overall polarity,all,"lexicon M, re-run 1",241,,,,0.527,0.643,0.726,0.671,0.778,0.585,0.832,0.77,0.888
+3 overall polarity,all,"lexicon M, re-run 2",241,,,,0.54,0.655,0.743,0.688,0.796,0.598,0.841,0.778,0.897
+3 overall polarity,all,"lexicon M, re-run 3",241,,,,0.54,0.655,0.743,0.688,0.796,0.598,0.841,0.778,0.897
+3 overall polarity,all,"transformer, no normalization",241,,,,0.589,0.696,0.842,0.797,0.887,0.636,0.925,0.887,0.956
+3 overall polarity,all,"transformer, proposed dictionary",241,,,,0.593,0.704,0.851,0.806,0.895,0.643,0.927,0.889,0.958
+1 service mention,Indonesian/Manadonese,"lexicon window, no normalization",214,0.762,0.98,0.857,0.8,0.899,,,,,,,
+1 service mention,Indonesian/Manadonese,"lexicon window, proposed dictionary",214,0.762,0.98,0.857,0.8,0.899,,,,,,,
+1 service mention,Indonesian/Manadonese,surface window (hybrid),214,0.756,0.98,0.853,0.795,0.897,,,,,,,
+2 service polarity,Indonesian/Manadonese,"lexicon X, no normalization",91,,,,0.41,0.552,0.681,0.57,0.793,0.484,0.731,0.594,0.853
+2 service polarity,Indonesian/Manadonese,"lexicon X, colloquial lexicon",91,,,,0.427,0.567,0.703,0.592,0.814,0.5,0.741,0.603,0.861
+2 service polarity,Indonesian/Manadonese,"lexicon X, proposed dictionary",91,,,,0.423,0.553,0.681,0.582,0.786,0.493,0.728,0.589,0.849
+2 service polarity,Indonesian/Manadonese,"lexicon X, combined",91,,,,0.427,0.558,0.703,0.602,0.806,0.495,0.738,0.599,0.859
+2 service polarity,Indonesian/Manadonese,"lexicon X, re-run 1",91,,,,0.429,0.558,0.681,0.582,0.786,0.498,0.728,0.589,0.849
+2 service polarity,Indonesian/Manadonese,"lexicon X, re-run 2",91,,,,0.435,0.549,0.692,0.606,0.775,0.496,0.701,0.566,0.829
+2 service polarity,Indonesian/Manadonese,"lexicon X, re-run 3",91,,,,0.438,0.565,0.692,0.588,0.793,0.506,0.704,0.565,0.835
+2 service polarity,Indonesian/Manadonese,hybrid X (window + transformer),91,,,,0.52,0.63,0.868,0.8,0.931,0.578,0.87,0.763,0.951
+2 service polarity,Indonesian/Manadonese,"transformer, whole review, no normalization",91,,,,0.495,0.634,0.857,0.778,0.93,0.564,0.872,0.759,0.96
+2 service polarity,Indonesian/Manadonese,"transformer, whole review, proposed dictionary",91,,,,0.498,0.889,0.868,0.783,0.941,0.561,0.876,0.762,0.963
+3 overall polarity,Indonesian/Manadonese,"lexicon M, no normalization",183,,,,0.502,0.625,0.694,0.63,0.758,0.565,0.812,0.738,0.88
+3 overall polarity,Indonesian/Manadonese,"lexicon M, colloquial lexicon",183,,,,0.511,0.639,0.694,0.633,0.753,0.576,0.809,0.737,0.875
+3 overall polarity,Indonesian/Manadonese,"lexicon M, proposed dictionary",183,,,,0.506,0.633,0.71,0.644,0.78,0.568,0.82,0.745,0.887
+3 overall polarity,Indonesian/Manadonese,"lexicon M, combined",183,,,,0.519,0.646,0.716,0.654,0.781,0.582,0.822,0.751,0.886
+3 overall polarity,Indonesian/Manadonese,"lexicon M, re-run 1",183,,,,0.499,0.632,0.694,0.629,0.759,0.566,0.811,0.735,0.877
+3 overall polarity,Indonesian/Manadonese,"lexicon M, re-run 2",183,,,,0.518,0.647,0.716,0.652,0.784,0.583,0.823,0.748,0.889
+3 overall polarity,Indonesian/Manadonese,"lexicon M, re-run 3",183,,,,0.518,0.647,0.716,0.652,0.784,0.583,0.823,0.748,0.889
+3 overall polarity,Indonesian/Manadonese,"transformer, no normalization",183,,,,0.581,0.702,0.831,0.776,0.883,0.639,0.915,0.866,0.952
+3 overall polarity,Indonesian/Manadonese,"transformer, proposed dictionary",183,,,,0.588,0.712,0.842,0.788,0.892,0.648,0.918,0.867,0.954

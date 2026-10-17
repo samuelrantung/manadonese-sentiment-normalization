@@ -1,0 +1,136 @@
+word,new_weight,reason
+babi,0,round 1: topic noun (food)
+minum,0,round 1: topic verb (drink)
+pilih,0,round 1: neutral verb
+restoran,0,round 1: topic noun (place)
+kuning,0,round 1: topic noun (colour / dish name)
+pesan,0,round 1: neutral verb (order); service anchor
+goreng,0,round 1: topic (cooking method)
+bakar,0,round 1: topic (cooking method)
+anak,0,round 1: topic noun
+ruang,0,round 1: topic noun
+masuk,0,round 1: neutral verb
+tradisional,0,round 1: neutral descriptor
+kafe,0,round 1: topic noun (place)
+udara,0,round 1: topic noun
+kebun,0,round 1: topic noun
+kota,0,round 1: topic noun
+malam,0,round 1: topic noun (time)
+keluarga,0,round 1: topic noun
+nasi,0,round 1: topic noun (food)
+harga,0,round 1: topic noun (price) - polarity comes from murah/mahal
+suasana,0,round 1: topic noun (ambience) - polarity comes from its modifier
+saji,0,round 1: neutral verb (serve); service anchor
+milik,0,round 1: neutral verb
+pandang,0,round 1: neutral verb
+coba,0,round 1: neutral verb
+rumah,0,round 1: topic noun
+sedia,0,round 1: neutral verb
+alam,0,round 1: topic noun
+parkir,0,round 1: topic noun
+taman,0,round 1: topic noun
+bawa,0,round 1: neutral verb
+bayar,0,round 1: neutral verb; service anchor
+air,0,round 1: topic noun
+hotel,0,round 1: topic noun
+pergi,0,round 1: neutral verb
+mampir,0,round 1: neutral verb
+masakan,0,round 1: topic noun
+sarap,0,round 1: topic noun (breakfast)
+langgan,0,round 1: topic noun (customer); service anchor
+kerja,0,round 1: neutral; service anchor
+cari,0,round 1: neutral verb
+jual,0,round 1: neutral verb
+mobil,0,round 1: topic noun
+sapi,0,round 1: topic noun (food)
+tinggal,0,round 1: neutral verb
+teh,0,round 1: topic noun (drink)
+tarik,0,round 1: neutral verb
+inap,0,round 1: neutral verb
+tukar,0,round 1: neutral verb
+musik,0,round 1: topic noun
+live,0,round 1: topic (live music)
+pusat,0,round 1: topic noun
+beli,0,round 1: neutral verb
+biar,0,round 1: function word
+tingkat,0,round 1: topic noun
+isi,0,round 1: neutral
+pohon,0,round 1: topic noun
+abon,0,round 1: topic noun (food)
+pagi,0,round 1: topic noun (time)
+kayak,0,round 1: function word (like)
+kolam,0,round 1: topic noun
+porsi,0,round 1: topic noun (portion)
+foto,0,round 1: topic noun
+buat,0,round 1: neutral verb
+temu,0,round 1: neutral verb
+proses,0,round 1: neutral; service anchor
+paket,0,round 1: topic noun
+langsung,0,round 1: adverb
+ambil,0,round 1: neutral verb
+butuh,0,round 1: neutral verb
+wajib,0,round 1: neutral modal
+ya,0,round 1: discourse particle
+hidang,0,round 1: neutral verb; service anchor
+tunggu,0,round 1: neutral verb; service anchor - polarity from lama/cepat
+nunggu,0,round 1: neutral verb
+cicip,0,round 1: neutral verb
+ngopi,0,round 1: neutral verb
+tambah,0,round 1: neutral verb
+kadang,0,round 1: adverb
+tutup,0,round 1: neutral verb
+saran,0,round 1: neutral noun
+dingin,0,round 1: taste/temperature - context dependent
+panas,0,round 1: taste/temperature - context dependent
+pedas,0,round 1: taste - context dependent
+manis,0,round 1: taste - context dependent
+asam,0,round 1: taste - context dependent
+kering,0,round 1: texture - context dependent
+ramai,0,round 1: context dependent (lively vs crowded)
+sederhana,0,round 1: context dependent
+hangat,0,round 1: context dependent
+bagus,3,round 1: sign error: good
+cocok,3,round 1: sign error: suitable
+indah,3,round 1: sign error: beautiful
+lumayan,2,round 1: sign error: quite good
+senang,4,round 1: weak net: happy
+cantik,3,round 1: sign error: pretty
+lengkap,2,round 1: sign error: complete
+layak,3,round 1: sign error: worthy
+takjub,4,round 1: amazed
+mudah,3,round 1: easy
+super,3,round 1: sign error: super
+fresh,3,round 1: sign error: fresh
+enak,4,round 1: weak net (+1): delicious
+ramah,4,round 1: weak net: friendly
+cepat,3,round 1: zero net: fast (service)
+lambat,-3,round 1: sign error: slow (service)
+mahal,-2,round 1: sign error: expensive
+lupa,-3,round 1: forgot (service failure)
+kecewa,-3,round 2: evaluative stem missing from InSet (disappointed; from mengecewakan)
+sulit,-3,round 2: evaluative stem missing from InSet (difficult)
+rekomendasi,3,round 2: evaluative stem missing from InSet (recommended)
+rekomended,3,round 2: evaluative stem missing from InSet (recommended)
+bersih,3,round 2: evaluative stem missing from InSet (clean)
+jangkau,3,round 2: evaluative stem missing from InSet (terjangkau = affordable)
+sejuk,3,round 2: evaluative stem missing from InSet (cool / pleasant)
+adem,3,round 2: evaluative stem missing from InSet (cool / pleasant)
+favorit,3,round 2: evaluative stem missing from InSet (favourite)
+istimewa,3,round 2: evaluative stem missing from InSet (special)
+strategis,3,round 2: evaluative stem missing from InSet (strategic location)
+lembut,3,round 2: evaluative stem missing from InSet (tender / soft)
+keren,3,round 2: evaluative stem missing from InSet (cool / great)
+unik,3,round 2: evaluative stem missing from InSet (unique)
+legendaris,3,round 2: evaluative stem missing from InSet (legendary)
+sopan,3,round 2: evaluative stem missing from InSet (polite); service attribute
+profesional,3,round 2: evaluative stem missing from InSet (professional); service attribute
+best,3,round 2: untranslated English evaluative (best)
+worth,3,round 2: untranslated English evaluative (worth it)
+cozy,3,round 2: untranslated English evaluative (cosy)
+enakk,4,round 2: unnormalized spelling of enak (same weight as enak)
+bantu,2,round 2: sign error (helpful); service attribute
+info,0,round 2: service anchor with no sentiment of its own
+panggil,0,round 2: service anchor with no sentiment of its own (call)
+tegur,-2,round 2: reprimanded by staff (ditegur); author-reviewed
+sikap,0,round 2: service anchor with no sentiment of its own (attitude)
+siap,0,round 2: neutral process verb in this corpus (disiapkan = prepared); author-reviewed
