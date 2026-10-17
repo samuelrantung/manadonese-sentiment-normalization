@@ -1,0 +1,6 @@
+scorer,model_commit,pos,neu,neg,five_star_scored_negative,r_with_Y,R2,agreement_with_lexicon
+lexicon M (proposed pipeline),ac452dcb0f4966130bba44f4ee0013bb5d52c282,797,111,188,37.0,0.59,0.348,1.0
+"IndoBERT, no normalization",ac452dcb0f4966130bba44f4ee0013bb5d52c282,858,45,193,20.0,0.725,0.526,0.808
+"IndoBERT, with proposed dictionary",ac452dcb0f4966130bba44f4ee0013bb5d52c282,860,44,192,18.0,0.73,0.532,0.807
+lexicon X (service),ac452dcb0f4966130bba44f4ee0013bb5d52c282,353,594,149,,0.411,,1.0
+hybrid X: lexicon window + IndoBERT,ac452dcb0f4966130bba44f4ee0013bb5d52c282,391,558,147,,0.499,,0.901

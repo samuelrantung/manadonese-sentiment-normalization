@@ -1,0 +1,10 @@
+2026-08-29 12:36:00 - INFO - Slang dictionary loaded: 109 entries from /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/input/manado_slang_dict.json
+2026-08-29 12:36:00 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_translated.csv
+2026-08-29 12:36:00 - INFO - Loaded 1098 rows.
+2026-08-29 12:36:00 - INFO - Normalization complete. 1,315 substitutions made across 584 rows (53.2% of corpus).
+2026-08-29 12:36:00 - INFO - Output saved to: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_normalized.csv
+2026-10-14 09:19:39 - INFO - Slang dictionary loaded: 109 entries from /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/input/manado_slang_dict.json
+2026-10-14 09:19:39 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_translated.csv
+2026-10-14 09:19:39 - INFO - Loaded 1098 rows.
+2026-10-14 09:19:40 - INFO - Normalization complete. 1,315 substitutions made across 584 rows (53.2% of corpus).
+2026-10-14 09:19:40 - INFO - Output saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_normalized.csv

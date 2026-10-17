@@ -1,0 +1,93 @@
+ROBUSTNESS CHECKS  (n = 1096 reviews, 56 restaurants; SEs clustered by restaurant)
+
+0. MAIN MODELS (current scoring, clustered SEs)
+  Model 1  a: X -> M           b =   0.702   SE = 0.031   p = 0.0000
+  Model 2  c': X -> Y (direct) b =   0.195   SE = 0.068   p = 0.0043
+  Model 2  b: M -> Y           b =   0.942   SE = 0.070   p = 0.0000
+  R2 Model 1 = 0.353, Model 2 = 0.354
+  Total effect (Y ~ X alone):
+  c: X -> Y (total)            b =   0.856   SE = 0.073   p = 0.0000
+
+1. DECOUPLING: M_rest = satisfaction from text OUTSIDE the service windows
+  Median review length after preprocessing: 8 tokens (IQR 4-16)
+  Share of M's scored tokens that lie inside service windows: 45.0%
+  Reviews with X != 0: 502; of these, X == M in 92.8%; window covers the whole review in 50.8%
+  r(X, M) = 0.595   r(X, M_rest) = -0.050   r(M_rest, Y) = 0.342
+  a: X -> M_rest               b =  -0.052   SE = 0.032   p = 0.1045
+  c': X -> Y (direct)          b =   0.894   SE = 0.067   p = 0.0000
+  b: M_rest -> Y               b =   0.722   SE = 0.060   p = 0.0000
+  R2 = 0.301
+
+2. SERVICE MENTION (X = 0 mixes "no service term" with "balanced")
+  Reviews mentioning service: 546 (49.8%); mentioned but X = 0: 44
+  (a) all reviews, with a mention indicator:
+    x                            b =   0.480   SE = 0.099   p = 0.0000
+    m                            b =   0.738   SE = 0.084   p = 0.0000
+    mention                      b =  -0.640   SE = 0.108   p = 0.0000
+  (b) only reviews that mention service (n = 546):
+    c': X -> Y, with M           b =   0.401   SE = 0.136   p = 0.0032
+    b: M -> Y                    b =   0.835   SE = 0.132   p = 0.0000
+    c': X -> Y, with M_rest      b =   1.063   SE = 0.073   p = 0.0000
+    b: M_rest -> Y               b =   0.392   SE = 0.065   p = 0.0000
+
+3. TRACE: direct effect of X after each scoring change (Y ~ X + M; all stages on the current preprocessing)
+  stage                               r(M,Y)     b_X     p_X     b_M     R2
+  0 original scoring rules             0.382   0.463  0.0000   0.348  0.184
+  1 negators not scored                0.311   0.443  0.0000   0.265  0.130
+  2 full-review negation lookback      0.311   0.412  0.0000   0.278  0.126
+  3 merged windows                     0.311   0.403  0.0000   0.280  0.124
+  4 drop terima/kasih                  0.311   0.392  0.0000   0.289  0.123
+  5 domain overrides (current)         0.590   0.109  0.0959   0.985  0.350
+
+4. FUNCTIONAL FORM
+  (a) X and M as categories (reference = 0):
+    x[T.-1]                      b =  -0.928   SE = 0.228   p = 0.0000
+    x[T.1]                       b =  -0.085   SE = 0.068   p = 0.2094
+    m[T.-1]                      b =  -0.906   SE = 0.258   p = 0.0004
+    m[T.1]                       b =   0.693   SE = 0.140   p = 0.0000
+  (b) raw scores, standardized (1 SD change):
+    x_raw_z                      b =   0.104   SE = 0.073   p = 0.1530
+    m_raw_z                      b =   0.570   SE = 0.079   p = 0.0000
+      R2 = 0.230
+    x_raw_z (with M_rest raw)    b =   0.513   SE = 0.059   p = 0.0000
+    m_rest_raw_z                 b =   0.392   SE = 0.054   p = 0.0000
+
+5. ORDERED LOGIT for the 1-5 star rating (clustered SEs)
+  with M:
+    x          log-odds =  0.466  (odds ratio  1.59)  SE = 0.135  p = 0.0006
+    m          log-odds =  1.240  (odds ratio  3.46)  SE = 0.110  p = 0.0000
+  with M_rest:
+    x          log-odds =  1.442  (odds ratio  4.23)  SE = 0.132  p = 0.0000
+    m_rest     log-odds =  1.010  (odds ratio  2.75)  SE = 0.105  p = 0.0000
+
+6. INDIRECT EFFECT a x b: cluster bootstrap over restaurants (2,000 draws, percentile 95% CI)
+  mediator m      : indirect = 0.661 [0.529, 0.780]   direct = 0.195 [0.063, 0.337]   share mediated = 77.2%
+  mediator m_rest : indirect = -0.037 [-0.083, 0.005]   direct = 0.894 [0.760, 1.024]   share mediated = -4.4%
+
+7. CROSS-TABULATIONS (row % within each star rating)
+  M by star rating:
+                    neg  zero   pos    n
+    review_rating                       
+    1              69.8  12.7  17.5  126
+    2              61.0  17.1  22.0   41
+    3              25.0  13.6  61.4   44
+    4              15.1  11.7  73.2  179
+    5               5.2   8.6  86.1  706
+  X by star rating:
+                    neg  zero   pos    n
+    review_rating                       
+    1              57.9  29.4  12.7  126
+    2              46.3  34.1  19.5   41
+    3              22.7  54.5  22.7   44
+    4              10.6  62.0  27.4  179
+    5               4.0  57.8  38.2  706
+
+8. MAIN RQ3 MODELS: Y ~ X + M_rest + S (and the comparison with M), clustered SEs
+  with M_rest:   OLS R2 = 0.368
+    x        OLS b =  1.056 (SE 0.071, p = 0.0000)   ordered logit =  1.542 (SE 0.126, p = 0.0000, OR 4.67)
+    m_rest   OLS b =  0.541 (SE 0.062, p = 0.0000)   ordered logit =  0.823 (SE 0.113, p = 0.0000, OR 2.28)
+    mention  OLS b = -0.776 (SE 0.096, p = 0.0000)   ordered logit = -0.991 (SE 0.182, p = 0.0000, OR 0.37)
+  with M:   OLS R2 = 0.396
+    x        OLS b =  0.480 (SE 0.099, p = 0.0000)   ordered logit =  0.727 (SE 0.141, p = 0.0000, OR 2.07)
+    m        OLS b =  0.738 (SE 0.084, p = 0.0000)   ordered logit =  1.058 (SE 0.118, p = 0.0000, OR 2.88)
+    mention  OLS b = -0.640 (SE 0.108, p = 0.0000)   ordered logit = -0.903 (SE 0.186, p = 0.0000, OR 0.41)

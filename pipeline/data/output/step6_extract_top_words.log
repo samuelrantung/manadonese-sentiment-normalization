@@ -1,0 +1,10 @@
+2026-08-29 12:36:02 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_preprocessed.csv
+2026-08-29 12:36:02 - INFO - Loaded 1095 rows.
+2026-08-29 12:36:03 - INFO - Extracting top 200 words from corpus...
+2026-08-29 12:36:03 - INFO - Total unique words in corpus: 2,924
+2026-08-29 12:36:03 - INFO - Top 200 words saved to: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/top_words.csv
+2026-10-14 09:19:42 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_preprocessed.csv
+2026-10-14 09:19:42 - INFO - Loaded 1095 rows.
+2026-10-14 09:19:42 - INFO - Extracting top 200 words from corpus...
+2026-10-14 09:19:42 - INFO - Total unique words in corpus: 2,924
+2026-10-14 09:19:42 - INFO - Top 200 words saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/top_words.csv

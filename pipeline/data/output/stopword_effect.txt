@@ -1,0 +1,9 @@
+STOP-WORD CURATION (n = 1,096; proposed dictionary, domain table, r = 5, scope 2)
+
+  curated list removes 740 words; full NLTK list removes 757
+
+  list      r(M,Y)  r(X,Y)  5* scored neg  gold overall  gold service
+  curated    0.590   0.411             37         0.739         0.714
+  full       0.482   0.258             36         0.647         0.496
+
+  gold overall n = 241, gold service n = 119 (agreed labels)

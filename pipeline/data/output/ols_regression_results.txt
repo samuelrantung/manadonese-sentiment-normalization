@@ -1,0 +1,102 @@
+============================================================
+STAGE 1: CORRELATION MATRIX (X, M, Y)
+============================================================
+Method: Pearson correlation (point-biserial for ordinal vs continuous)
+                                                 service_quality_X (Service Quality)  ...  review_rating_Y (Star Rating)
+service_quality_X (Service Quality)                                         1.000000  ...                       0.411411
+customer_satisfaction_M (Customer Satisfaction)                             0.594502  ...                       0.590008
+review_rating_Y (Star Rating)                                               0.411411  ...                       1.000000
+
+[3 rows x 3 columns]
+============================================================
+STAGE 1.5: VARIANCE INFLATION FACTOR (VIF) — X and M
+============================================================
+Checks multicollinearity between predictors in Model 2 (X + M → Y).
+Rule of thumb: VIF < 5 = acceptable, VIF > 10 = problematic.
+              Predictor    VIF
+      service_quality_X 1.5466
+customer_satisfaction_M 1.5466
+  [OK] service_quality_X VIF = 1.5466 — acceptable.
+  [OK] customer_satisfaction_M VIF = 1.5466 — acceptable.
+============================================================
+STAGE 2: OLS MODEL 1 — X -> M
+Does service quality predict customer sentiment?
+============================================================
+                               OLS Regression Results                              
+===================================================================================
+Dep. Variable:     customer_satisfaction_M   R-squared:                       0.353
+Model:                                 OLS   Adj. R-squared:                  0.353
+Method:                      Least Squares   F-statistic:                     598.0
+Date:                     Wed, 14 Oct 2026   Prob (F-statistic):          1.03e-105
+Time:                             11:15:30   Log-Likelihood:                -1027.0
+No. Observations:                     1096   AIC:                             2058.
+Df Residuals:                         1094   BIC:                             2068.
+Df Model:                                1                                         
+Covariance Type:                 nonrobust                                         
+=====================================================================================
+                        coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------
+const                 0.4250      0.019     21.884      0.000       0.387       0.463
+service_quality_X     0.7018      0.029     24.454      0.000       0.645       0.758
+==============================================================================
+Omnibus:                       76.330   Durbin-Watson:                   1.880
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               90.810
+Skew:                          -0.682   Prob(JB):                     1.91e-20
+Kurtosis:                       3.355   Cond. No.                         1.63
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+------------------------------------------------------------
+H1 RESULT: Effect of Service Quality (X) on Customer Satisfaction (M)
+  service_quality_X (Service Quality) coefficient: 0.7018
+  Significant (p < 0.001) ***
+  Model R²: 0.3534 | F-stat p: 0.0000
+  H1 Conclusion: SUPPORTED — X significantly predicts M.
+------------------------------------------------------------
+============================================================
+STAGE 3: OLS MODEL 2 — X + M -> Y
+Do service quality and customer satisfaction explain review rating?
+============================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          review_rating   R-squared:                       0.354
+Model:                            OLS   Adj. R-squared:                  0.353
+Method:                 Least Squares   F-statistic:                     299.2
+Date:                Wed, 14 Oct 2026   Prob (F-statistic):          2.32e-104
+Time:                        11:15:30   Log-Likelihood:                -1648.4
+No. Observations:                1096   AIC:                             3303.
+Df Residuals:                    1093   BIC:                             3318.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+const                       3.6245      0.041     88.241      0.000       3.544       3.705
+service_quality_X           0.1953      0.063      3.102      0.002       0.072       0.319
+customer_satisfaction_M     0.9421      0.053     17.667      0.000       0.837       1.047
+==============================================================================
+Omnibus:                      161.582   Durbin-Watson:                   1.962
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              309.979
+Skew:                          -0.890   Prob(JB):                     4.89e-68
+Kurtosis:                       4.903   Cond. No.                         2.96
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+------------------------------------------------------------
+H2 RESULT: Effect of Customer Satisfaction (M) on Rating (Y), controlling for X
+  customer_satisfaction_M (Customer Satisfaction) coefficient: 0.9421
+  Significant (p < 0.001) ***
+  H2 Conclusion: SUPPORTED — M significantly predicts Y.
+H3 RESULT: Direct Effect of Service Quality (X) on Rating (Y), controlling for M
+  service_quality_X (Service Quality) coefficient: 0.1953
+  Significant (p = 0.0020) **
+  H3 Conclusion: SUPPORTED — X has a significant direct effect on Y.
+H4 RESULT: Mediation — Does M mediate the effect of X on Y?
+  Path a (X → M, Model 1): Significant
+  Path b (M → Y, Model 2): Significant
+  H4 Conclusion: SUPPORTED — Both path a and path b are significant.
+  Sentiment (M) mediates the effect of Service Quality (X) on Review Rating (Y).
+  Model R²: 0.3538 | F-stat p: 0.0000
+------------------------------------------------------------

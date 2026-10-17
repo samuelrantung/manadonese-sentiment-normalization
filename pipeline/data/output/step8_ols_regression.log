@@ -1,0 +1,770 @@
+2026-08-29 12:36:12 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_scored.csv
+2026-08-29 12:36:12 - INFO - Loaded 1095 rows.
+2026-08-29 12:36:12 - INFO - No missing values found. Analysing 1095 rows.
+2026-08-29 12:36:12 - INFO - X distribution — {-1: 234, 0: 588, 1: 273}
+2026-08-29 12:36:12 - INFO - M distribution — {-1: 445, 0: 98, 1: 552}
+2026-08-29 12:36:12 - INFO - Y distribution — {1: 126, 2: 41, 3: 44, 4: 179, 5: 705}
+2026-08-29 12:36:12 - INFO - ============================================================
+2026-08-29 12:36:12 - INFO - STAGE 1: CORRELATION MATRIX (X, M, Y)
+2026-08-29 12:36:12 - INFO - ============================================================
+2026-08-29 12:36:12 - INFO - Method: Pearson correlation (point-biserial for ordinal vs continuous)
+2026-08-29 12:36:12 - INFO -                                               service_quality_X (Kualitas Layanan)  ...  review_rating_Y (Star Rating)
+2026-08-29 12:36:12 - INFO - service_quality_X (Kualitas Layanan)                                      1.000000  ...                       0.329164
+2026-08-29 12:36:12 - INFO - customer_satisfaction_M (Kepuasan Pelanggan)                              0.568045  ...                       0.353185
+2026-08-29 12:36:12 - INFO - review_rating_Y (Star Rating)                                             0.329164  ...                       1.000000
+2026-08-29 12:36:12 - INFO - 
+2026-08-29 12:36:12 - INFO - [3 rows x 3 columns]
+2026-08-29 12:36:12 - INFO - ============================================================
+2026-08-29 12:36:12 - INFO - STAGE 1.5: VARIANCE INFLATION FACTOR (VIF) — X and M
+2026-08-29 12:36:12 - INFO - ============================================================
+2026-08-29 12:36:12 - INFO - Checks multicollinearity between predictors in Model 2 (X + M → Y).
+2026-08-29 12:36:12 - INFO - Rule of thumb: VIF < 5 = acceptable, VIF > 10 = problematic.
+2026-08-29 12:36:12 - INFO -               Predictor    VIF
+2026-08-29 12:36:12 - INFO -       service_quality_X 1.4764
+2026-08-29 12:36:12 - INFO - customer_satisfaction_M 1.4764
+2026-08-29 12:36:12 - INFO -   [OK] service_quality_X VIF = 1.4764 — acceptable.
+2026-08-29 12:36:12 - INFO -   [OK] customer_satisfaction_M VIF = 1.4764 — acceptable.
+2026-08-29 12:36:12 - INFO - ============================================================
+2026-08-29 12:36:12 - INFO - STAGE 2: OLS MODEL 1 — X -> M
+2026-08-29 12:36:12 - INFO - Does service quality predict customer sentiment?
+2026-08-29 12:36:12 - INFO - ============================================================
+2026-08-29 12:36:12 - INFO -                                OLS Regression Results                              
+2026-08-29 12:36:12 - INFO - ===================================================================================
+2026-08-29 12:36:12 - INFO - Dep. Variable:     customer_satisfaction_M   R-squared:                       0.323
+2026-08-29 12:36:12 - INFO - Model:                                 OLS   Adj. R-squared:                  0.322
+2026-08-29 12:36:12 - INFO - Method:                      Least Squares   F-statistic:                     520.7
+2026-08-29 12:36:12 - INFO - Date:                     Sat, 29 Aug 2026   Prob (F-statistic):           1.44e-94
+2026-08-29 12:36:12 - INFO - Time:                             12:36:12   Log-Likelihood:                -1283.3
+2026-08-29 12:36:12 - INFO - No. Observations:                     1095   AIC:                             2571.
+2026-08-29 12:36:12 - INFO - Df Residuals:                         1093   BIC:                             2581.
+2026-08-29 12:36:12 - INFO - Df Model:                                1                                         
+2026-08-29 12:36:12 - INFO - Covariance Type:                 nonrobust                                         
+2026-08-29 12:36:12 - INFO - =====================================================================================
+2026-08-29 12:36:12 - INFO -                         coef    std err          t      P>|t|      [0.025      0.975]
+2026-08-29 12:36:12 - INFO - -------------------------------------------------------------------------------------
+2026-08-29 12:36:12 - INFO - const                 0.0695      0.024      2.935      0.003       0.023       0.116
+2026-08-29 12:36:12 - INFO - service_quality_X     0.7935      0.035     22.819      0.000       0.725       0.862
+2026-08-29 12:36:12 - INFO - ==============================================================================
+2026-08-29 12:36:12 - INFO - Omnibus:                       33.697   Durbin-Watson:                   1.914
+2026-08-29 12:36:12 - INFO - Prob(Omnibus):                  0.000   Jarque-Bera (JB):               20.472
+2026-08-29 12:36:12 - INFO - Skew:                          -0.185   Prob(JB):                     3.59e-05
+2026-08-29 12:36:12 - INFO - Kurtosis:                       2.442   Cond. No.                         1.48
+2026-08-29 12:36:12 - INFO - ==============================================================================
+2026-08-29 12:36:12 - INFO - 
+2026-08-29 12:36:12 - INFO - Notes:
+2026-08-29 12:36:12 - INFO - [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2026-08-29 12:36:12 - INFO - ------------------------------------------------------------
+2026-08-29 12:36:12 - INFO - H1 RESULT: Effect of Service Quality (X) on Customer Satisfaction (M)
+2026-08-29 12:36:12 - INFO -   service_quality_X (Kualitas Layanan) coefficient: 0.7935
+2026-08-29 12:36:12 - INFO -   Significant (p < 0.001) ***
+2026-08-29 12:36:12 - INFO -   Model R²: 0.3227 | F-stat p: 0.0000
+2026-08-29 12:36:12 - INFO -   H1 Conclusion: SUPPORTED — X significantly predicts M.
+2026-08-29 12:36:12 - INFO - ------------------------------------------------------------
+2026-08-29 12:36:12 - INFO - ============================================================
+2026-08-29 12:36:12 - INFO - STAGE 3: OLS MODEL 2 — X + M -> Y
+2026-08-29 12:36:12 - INFO - Do service quality and customer satisfaction explain review rating?
+2026-08-29 12:36:12 - INFO - ============================================================
+2026-08-29 12:36:12 - INFO -                             OLS Regression Results                            
+2026-08-29 12:36:12 - INFO - ==============================================================================
+2026-08-29 12:36:12 - INFO - Dep. Variable:          review_rating   R-squared:                       0.149
+2026-08-29 12:36:12 - INFO - Model:                            OLS   Adj. R-squared:                  0.148
+2026-08-29 12:36:12 - INFO - Method:                 Least Squares   F-statistic:                     95.70
+2026-08-29 12:36:12 - INFO - Date:                Sat, 29 Aug 2026   Prob (F-statistic):           5.06e-39
+2026-08-29 12:36:12 - INFO - Time:                        12:36:12   Log-Likelihood:                -1797.9
+2026-08-29 12:36:12 - INFO - No. Observations:                1095   AIC:                             3602.
+2026-08-29 12:36:12 - INFO - Df Residuals:                    1092   BIC:                             3617.
+2026-08-29 12:36:12 - INFO - Df Model:                           2                                         
+2026-08-29 12:36:12 - INFO - Covariance Type:            nonrobust                                         
+2026-08-29 12:36:12 - INFO - ===========================================================================================
+2026-08-29 12:36:12 - INFO -                               coef    std err          t      P>|t|      [0.025      0.975]
+2026-08-29 12:36:12 - INFO - -------------------------------------------------------------------------------------------
+2026-08-29 12:36:12 - INFO - const                       4.1359      0.038    108.778      0.000       4.061       4.210
+2026-08-29 12:36:12 - INFO - service_quality_X           0.3784      0.068      5.595      0.000       0.246       0.511
+2026-08-29 12:36:12 - INFO - customer_satisfaction_M     0.3503      0.048      7.235      0.000       0.255       0.445
+2026-08-29 12:36:12 - INFO - ==============================================================================
+2026-08-29 12:36:12 - INFO - Omnibus:                      188.293   Durbin-Watson:                   1.864
+2026-08-29 12:36:12 - INFO - Prob(Omnibus):                  0.000   Jarque-Bera (JB):              290.517
+2026-08-29 12:36:12 - INFO - Skew:                          -1.208   Prob(JB):                     8.22e-64
+2026-08-29 12:36:12 - INFO - Kurtosis:                       3.727   Cond. No.                         2.15
+2026-08-29 12:36:12 - INFO - ==============================================================================
+2026-08-29 12:36:12 - INFO - 
+2026-08-29 12:36:12 - INFO - Notes:
+2026-08-29 12:36:12 - INFO - [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2026-08-29 12:36:12 - INFO - ------------------------------------------------------------
+2026-08-29 12:36:12 - INFO - H2 RESULT: Effect of Customer Satisfaction (M) on Rating (Y), controlling for X
+2026-08-29 12:36:12 - INFO -   customer_satisfaction_M (Kepuasan Pelanggan) coefficient: 0.3503
+2026-08-29 12:36:12 - INFO -   Significant (p < 0.001) ***
+2026-08-29 12:36:12 - INFO -   H2 Conclusion: SUPPORTED — M significantly predicts Y.
+2026-08-29 12:36:12 - INFO - H3 RESULT: Direct Effect of Service Quality (X) on Rating (Y), controlling for M
+2026-08-29 12:36:12 - INFO -   service_quality_X (Kualitas Layanan) coefficient: 0.3784
+2026-08-29 12:36:12 - INFO -   Significant (p < 0.001) ***
+2026-08-29 12:36:12 - INFO -   H3 Conclusion: SUPPORTED — X has a significant direct effect on Y.
+2026-08-29 12:36:12 - INFO - H4 RESULT: Mediation — Does M mediate the effect of X on Y?
+2026-08-29 12:36:12 - INFO -   Path a (X → M, Model 1): Significant
+2026-08-29 12:36:12 - INFO -   Path b (M → Y, Model 2): Significant
+2026-08-29 12:36:12 - INFO -   H4 Conclusion: SUPPORTED — Both path a and path b are significant.
+2026-08-29 12:36:12 - INFO -   Sentiment (M) mediates the effect of Service Quality (X) on Review Rating (Y).
+2026-08-29 12:36:12 - INFO -   Model R²: 0.1491 | F-stat p: 0.0000
+2026-08-29 12:36:12 - INFO - ------------------------------------------------------------
+2026-08-29 12:36:12 - INFO - Text report saved to: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/ols_regression_results.txt
+2026-08-29 12:36:12 - INFO - Coefficient table saved to: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/ols_coefficients.csv
+2026-08-29 12:36:44 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_scored.csv
+2026-08-29 12:36:44 - INFO - Loaded 1095 rows.
+2026-08-29 12:36:44 - INFO - No missing values found. Analysing 1095 rows.
+2026-08-29 12:36:44 - INFO - X distribution — {-1: 234, 0: 588, 1: 273}
+2026-08-29 12:36:44 - INFO - M distribution — {-1: 445, 0: 98, 1: 552}
+2026-08-29 12:36:44 - INFO - Y distribution — {1: 126, 2: 41, 3: 44, 4: 179, 5: 705}
+2026-08-29 12:36:44 - INFO - ============================================================
+2026-08-29 12:36:44 - INFO - STAGE 1: CORRELATION MATRIX (X, M, Y)
+2026-08-29 12:36:44 - INFO - ============================================================
+2026-08-29 12:36:44 - INFO - Method: Pearson correlation (point-biserial for ordinal vs continuous)
+2026-08-29 12:36:44 - INFO -                                                  service_quality_X (Service Quality)  ...  review_rating_Y (Star Rating)
+2026-08-29 12:36:44 - INFO - service_quality_X (Service Quality)                                         1.000000  ...                       0.329164
+2026-08-29 12:36:44 - INFO - customer_satisfaction_M (Customer Satisfaction)                             0.568045  ...                       0.353185
+2026-08-29 12:36:44 - INFO - review_rating_Y (Star Rating)                                               0.329164  ...                       1.000000
+2026-08-29 12:36:44 - INFO - 
+2026-08-29 12:36:44 - INFO - [3 rows x 3 columns]
+2026-08-29 12:36:44 - INFO - ============================================================
+2026-08-29 12:36:44 - INFO - STAGE 1.5: VARIANCE INFLATION FACTOR (VIF) — X and M
+2026-08-29 12:36:44 - INFO - ============================================================
+2026-08-29 12:36:44 - INFO - Checks multicollinearity between predictors in Model 2 (X + M → Y).
+2026-08-29 12:36:44 - INFO - Rule of thumb: VIF < 5 = acceptable, VIF > 10 = problematic.
+2026-08-29 12:36:44 - INFO -               Predictor    VIF
+2026-08-29 12:36:44 - INFO -       service_quality_X 1.4764
+2026-08-29 12:36:44 - INFO - customer_satisfaction_M 1.4764
+2026-08-29 12:36:44 - INFO -   [OK] service_quality_X VIF = 1.4764 — acceptable.
+2026-08-29 12:36:44 - INFO -   [OK] customer_satisfaction_M VIF = 1.4764 — acceptable.
+2026-08-29 12:36:44 - INFO - ============================================================
+2026-08-29 12:36:44 - INFO - STAGE 2: OLS MODEL 1 — X -> M
+2026-08-29 12:36:44 - INFO - Does service quality predict customer sentiment?
+2026-08-29 12:36:44 - INFO - ============================================================
+2026-08-29 12:36:44 - INFO -                                OLS Regression Results                              
+2026-08-29 12:36:44 - INFO - ===================================================================================
+2026-08-29 12:36:44 - INFO - Dep. Variable:     customer_satisfaction_M   R-squared:                       0.323
+2026-08-29 12:36:44 - INFO - Model:                                 OLS   Adj. R-squared:                  0.322
+2026-08-29 12:36:44 - INFO - Method:                      Least Squares   F-statistic:                     520.7
+2026-08-29 12:36:44 - INFO - Date:                     Sat, 29 Aug 2026   Prob (F-statistic):           1.44e-94
+2026-08-29 12:36:44 - INFO - Time:                             12:36:44   Log-Likelihood:                -1283.3
+2026-08-29 12:36:44 - INFO - No. Observations:                     1095   AIC:                             2571.
+2026-08-29 12:36:44 - INFO - Df Residuals:                         1093   BIC:                             2581.
+2026-08-29 12:36:44 - INFO - Df Model:                                1                                         
+2026-08-29 12:36:44 - INFO - Covariance Type:                 nonrobust                                         
+2026-08-29 12:36:44 - INFO - =====================================================================================
+2026-08-29 12:36:44 - INFO -                         coef    std err          t      P>|t|      [0.025      0.975]
+2026-08-29 12:36:44 - INFO - -------------------------------------------------------------------------------------
+2026-08-29 12:36:44 - INFO - const                 0.0695      0.024      2.935      0.003       0.023       0.116
+2026-08-29 12:36:44 - INFO - service_quality_X     0.7935      0.035     22.819      0.000       0.725       0.862
+2026-08-29 12:36:44 - INFO - ==============================================================================
+2026-08-29 12:36:44 - INFO - Omnibus:                       33.697   Durbin-Watson:                   1.914
+2026-08-29 12:36:44 - INFO - Prob(Omnibus):                  0.000   Jarque-Bera (JB):               20.472
+2026-08-29 12:36:44 - INFO - Skew:                          -0.185   Prob(JB):                     3.59e-05
+2026-08-29 12:36:44 - INFO - Kurtosis:                       2.442   Cond. No.                         1.48
+2026-08-29 12:36:44 - INFO - ==============================================================================
+2026-08-29 12:36:44 - INFO - 
+2026-08-29 12:36:44 - INFO - Notes:
+2026-08-29 12:36:44 - INFO - [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2026-08-29 12:36:44 - INFO - ------------------------------------------------------------
+2026-08-29 12:36:44 - INFO - H1 RESULT: Effect of Service Quality (X) on Customer Satisfaction (M)
+2026-08-29 12:36:44 - INFO -   service_quality_X (Service Quality) coefficient: 0.7935
+2026-08-29 12:36:44 - INFO -   Significant (p < 0.001) ***
+2026-08-29 12:36:44 - INFO -   Model R²: 0.3227 | F-stat p: 0.0000
+2026-08-29 12:36:44 - INFO -   H1 Conclusion: SUPPORTED — X significantly predicts M.
+2026-08-29 12:36:44 - INFO - ------------------------------------------------------------
+2026-08-29 12:36:44 - INFO - ============================================================
+2026-08-29 12:36:44 - INFO - STAGE 3: OLS MODEL 2 — X + M -> Y
+2026-08-29 12:36:44 - INFO - Do service quality and customer satisfaction explain review rating?
+2026-08-29 12:36:44 - INFO - ============================================================
+2026-08-29 12:36:44 - INFO -                             OLS Regression Results                            
+2026-08-29 12:36:44 - INFO - ==============================================================================
+2026-08-29 12:36:44 - INFO - Dep. Variable:          review_rating   R-squared:                       0.149
+2026-08-29 12:36:44 - INFO - Model:                            OLS   Adj. R-squared:                  0.148
+2026-08-29 12:36:44 - INFO - Method:                 Least Squares   F-statistic:                     95.70
+2026-08-29 12:36:44 - INFO - Date:                Sat, 29 Aug 2026   Prob (F-statistic):           5.06e-39
+2026-08-29 12:36:44 - INFO - Time:                        12:36:44   Log-Likelihood:                -1797.9
+2026-08-29 12:36:44 - INFO - No. Observations:                1095   AIC:                             3602.
+2026-08-29 12:36:44 - INFO - Df Residuals:                    1092   BIC:                             3617.
+2026-08-29 12:36:44 - INFO - Df Model:                           2                                         
+2026-08-29 12:36:44 - INFO - Covariance Type:            nonrobust                                         
+2026-08-29 12:36:44 - INFO - ===========================================================================================
+2026-08-29 12:36:44 - INFO -                               coef    std err          t      P>|t|      [0.025      0.975]
+2026-08-29 12:36:44 - INFO - -------------------------------------------------------------------------------------------
+2026-08-29 12:36:44 - INFO - const                       4.1359      0.038    108.778      0.000       4.061       4.210
+2026-08-29 12:36:44 - INFO - service_quality_X           0.3784      0.068      5.595      0.000       0.246       0.511
+2026-08-29 12:36:44 - INFO - customer_satisfaction_M     0.3503      0.048      7.235      0.000       0.255       0.445
+2026-08-29 12:36:44 - INFO - ==============================================================================
+2026-08-29 12:36:44 - INFO - Omnibus:                      188.293   Durbin-Watson:                   1.864
+2026-08-29 12:36:44 - INFO - Prob(Omnibus):                  0.000   Jarque-Bera (JB):              290.517
+2026-08-29 12:36:44 - INFO - Skew:                          -1.208   Prob(JB):                     8.22e-64
+2026-08-29 12:36:44 - INFO - Kurtosis:                       3.727   Cond. No.                         2.15
+2026-08-29 12:36:44 - INFO - ==============================================================================
+2026-08-29 12:36:44 - INFO - 
+2026-08-29 12:36:44 - INFO - Notes:
+2026-08-29 12:36:44 - INFO - [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2026-08-29 12:36:44 - INFO - ------------------------------------------------------------
+2026-08-29 12:36:44 - INFO - H2 RESULT: Effect of Customer Satisfaction (M) on Rating (Y), controlling for X
+2026-08-29 12:36:44 - INFO -   customer_satisfaction_M (Customer Satisfaction) coefficient: 0.3503
+2026-08-29 12:36:44 - INFO -   Significant (p < 0.001) ***
+2026-08-29 12:36:44 - INFO -   H2 Conclusion: SUPPORTED — M significantly predicts Y.
+2026-08-29 12:36:44 - INFO - H3 RESULT: Direct Effect of Service Quality (X) on Rating (Y), controlling for M
+2026-08-29 12:36:44 - INFO -   service_quality_X (Service Quality) coefficient: 0.3784
+2026-08-29 12:36:44 - INFO -   Significant (p < 0.001) ***
+2026-08-29 12:36:44 - INFO -   H3 Conclusion: SUPPORTED — X has a significant direct effect on Y.
+2026-08-29 12:36:44 - INFO - H4 RESULT: Mediation — Does M mediate the effect of X on Y?
+2026-08-29 12:36:44 - INFO -   Path a (X → M, Model 1): Significant
+2026-08-29 12:36:44 - INFO -   Path b (M → Y, Model 2): Significant
+2026-08-29 12:36:44 - INFO -   H4 Conclusion: SUPPORTED — Both path a and path b are significant.
+2026-08-29 12:36:44 - INFO -   Sentiment (M) mediates the effect of Service Quality (X) on Review Rating (Y).
+2026-08-29 12:36:44 - INFO -   Model R²: 0.1491 | F-stat p: 0.0000
+2026-08-29 12:36:44 - INFO - ------------------------------------------------------------
+2026-08-29 12:36:44 - INFO - Text report saved to: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/ols_regression_results.txt
+2026-08-29 12:36:44 - INFO - Coefficient table saved to: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/ols_coefficients.csv
+2026-10-14 09:19:51 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_scored.csv
+2026-10-14 09:19:51 - INFO - Loaded 1095 rows.
+2026-10-14 09:19:51 - INFO - No missing values found. Analysing 1095 rows.
+2026-10-14 09:19:51 - INFO - X distribution — {-1: 234, 0: 588, 1: 273}
+2026-10-14 09:19:51 - INFO - M distribution — {-1: 445, 0: 98, 1: 552}
+2026-10-14 09:19:51 - INFO - Y distribution — {1: 126, 2: 41, 3: 44, 4: 179, 5: 705}
+2026-10-14 09:19:51 - INFO - ============================================================
+2026-10-14 09:19:51 - INFO - STAGE 1: CORRELATION MATRIX (X, M, Y)
+2026-10-14 09:19:51 - INFO - ============================================================
+2026-10-14 09:19:51 - INFO - Method: Pearson correlation (point-biserial for ordinal vs continuous)
+2026-10-14 09:19:51 - INFO -                                                  service_quality_X (Service Quality)  ...  review_rating_Y (Star Rating)
+2026-10-14 09:19:51 - INFO - service_quality_X (Service Quality)                                         1.000000  ...                       0.329164
+2026-10-14 09:19:51 - INFO - customer_satisfaction_M (Customer Satisfaction)                             0.568045  ...                       0.353185
+2026-10-14 09:19:51 - INFO - review_rating_Y (Star Rating)                                               0.329164  ...                       1.000000
+2026-10-14 09:19:51 - INFO - 
+2026-10-14 09:19:51 - INFO - [3 rows x 3 columns]
+2026-10-14 09:19:51 - INFO - ============================================================
+2026-10-14 09:19:51 - INFO - STAGE 1.5: VARIANCE INFLATION FACTOR (VIF) — X and M
+2026-10-14 09:19:51 - INFO - ============================================================
+2026-10-14 09:19:51 - INFO - Checks multicollinearity between predictors in Model 2 (X + M → Y).
+2026-10-14 09:19:51 - INFO - Rule of thumb: VIF < 5 = acceptable, VIF > 10 = problematic.
+2026-10-14 09:19:51 - INFO -               Predictor    VIF
+2026-10-14 09:19:51 - INFO -       service_quality_X 1.4764
+2026-10-14 09:19:51 - INFO - customer_satisfaction_M 1.4764
+2026-10-14 09:19:51 - INFO -   [OK] service_quality_X VIF = 1.4764 — acceptable.
+2026-10-14 09:19:51 - INFO -   [OK] customer_satisfaction_M VIF = 1.4764 — acceptable.
+2026-10-14 09:19:51 - INFO - ============================================================
+2026-10-14 09:19:51 - INFO - STAGE 2: OLS MODEL 1 — X -> M
+2026-10-14 09:19:51 - INFO - Does service quality predict customer sentiment?
+2026-10-14 09:19:51 - INFO - ============================================================
+2026-10-14 09:19:51 - INFO -                                OLS Regression Results                              
+2026-10-14 09:19:51 - INFO - ===================================================================================
+2026-10-14 09:19:51 - INFO - Dep. Variable:     customer_satisfaction_M   R-squared:                       0.323
+2026-10-14 09:19:51 - INFO - Model:                                 OLS   Adj. R-squared:                  0.322
+2026-10-14 09:19:51 - INFO - Method:                      Least Squares   F-statistic:                     520.7
+2026-10-14 09:19:51 - INFO - Date:                     Wed, 14 Oct 2026   Prob (F-statistic):           1.44e-94
+2026-10-14 09:19:51 - INFO - Time:                             09:19:51   Log-Likelihood:                -1283.3
+2026-10-14 09:19:51 - INFO - No. Observations:                     1095   AIC:                             2571.
+2026-10-14 09:19:51 - INFO - Df Residuals:                         1093   BIC:                             2581.
+2026-10-14 09:19:51 - INFO - Df Model:                                1                                         
+2026-10-14 09:19:51 - INFO - Covariance Type:                 nonrobust                                         
+2026-10-14 09:19:51 - INFO - =====================================================================================
+2026-10-14 09:19:51 - INFO -                         coef    std err          t      P>|t|      [0.025      0.975]
+2026-10-14 09:19:51 - INFO - -------------------------------------------------------------------------------------
+2026-10-14 09:19:51 - INFO - const                 0.0695      0.024      2.935      0.003       0.023       0.116
+2026-10-14 09:19:51 - INFO - service_quality_X     0.7935      0.035     22.819      0.000       0.725       0.862
+2026-10-14 09:19:51 - INFO - ==============================================================================
+2026-10-14 09:19:51 - INFO - Omnibus:                       33.697   Durbin-Watson:                   1.914
+2026-10-14 09:19:51 - INFO - Prob(Omnibus):                  0.000   Jarque-Bera (JB):               20.472
+2026-10-14 09:19:51 - INFO - Skew:                          -0.185   Prob(JB):                     3.59e-05
+2026-10-14 09:19:51 - INFO - Kurtosis:                       2.442   Cond. No.                         1.48
+2026-10-14 09:19:51 - INFO - ==============================================================================
+2026-10-14 09:19:51 - INFO - 
+2026-10-14 09:19:51 - INFO - Notes:
+2026-10-14 09:19:51 - INFO - [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2026-10-14 09:19:51 - INFO - ------------------------------------------------------------
+2026-10-14 09:19:51 - INFO - H1 RESULT: Effect of Service Quality (X) on Customer Satisfaction (M)
+2026-10-14 09:19:51 - INFO -   service_quality_X (Service Quality) coefficient: 0.7935
+2026-10-14 09:19:51 - INFO -   Significant (p < 0.001) ***
+2026-10-14 09:19:51 - INFO -   Model R²: 0.3227 | F-stat p: 0.0000
+2026-10-14 09:19:51 - INFO -   H1 Conclusion: SUPPORTED — X significantly predicts M.
+2026-10-14 09:19:51 - INFO - ------------------------------------------------------------
+2026-10-14 09:19:51 - INFO - ============================================================
+2026-10-14 09:19:51 - INFO - STAGE 3: OLS MODEL 2 — X + M -> Y
+2026-10-14 09:19:51 - INFO - Do service quality and customer satisfaction explain review rating?
+2026-10-14 09:19:51 - INFO - ============================================================
+2026-10-14 09:19:51 - INFO -                             OLS Regression Results                            
+2026-10-14 09:19:51 - INFO - ==============================================================================
+2026-10-14 09:19:51 - INFO - Dep. Variable:          review_rating   R-squared:                       0.149
+2026-10-14 09:19:51 - INFO - Model:                            OLS   Adj. R-squared:                  0.148
+2026-10-14 09:19:51 - INFO - Method:                 Least Squares   F-statistic:                     95.70
+2026-10-14 09:19:51 - INFO - Date:                Wed, 14 Oct 2026   Prob (F-statistic):           5.06e-39
+2026-10-14 09:19:51 - INFO - Time:                        09:19:51   Log-Likelihood:                -1797.9
+2026-10-14 09:19:51 - INFO - No. Observations:                1095   AIC:                             3602.
+2026-10-14 09:19:51 - INFO - Df Residuals:                    1092   BIC:                             3617.
+2026-10-14 09:19:51 - INFO - Df Model:                           2                                         
+2026-10-14 09:19:51 - INFO - Covariance Type:            nonrobust                                         
+2026-10-14 09:19:51 - INFO - ===========================================================================================
+2026-10-14 09:19:51 - INFO -                               coef    std err          t      P>|t|      [0.025      0.975]
+2026-10-14 09:19:51 - INFO - -------------------------------------------------------------------------------------------
+2026-10-14 09:19:51 - INFO - const                       4.1359      0.038    108.778      0.000       4.061       4.210
+2026-10-14 09:19:51 - INFO - service_quality_X           0.3784      0.068      5.595      0.000       0.246       0.511
+2026-10-14 09:19:51 - INFO - customer_satisfaction_M     0.3503      0.048      7.235      0.000       0.255       0.445
+2026-10-14 09:19:51 - INFO - ==============================================================================
+2026-10-14 09:19:51 - INFO - Omnibus:                      188.293   Durbin-Watson:                   1.864
+2026-10-14 09:19:51 - INFO - Prob(Omnibus):                  0.000   Jarque-Bera (JB):              290.517
+2026-10-14 09:19:51 - INFO - Skew:                          -1.208   Prob(JB):                     8.22e-64
+2026-10-14 09:19:51 - INFO - Kurtosis:                       3.727   Cond. No.                         2.15
+2026-10-14 09:19:51 - INFO - ==============================================================================
+2026-10-14 09:19:51 - INFO - 
+2026-10-14 09:19:51 - INFO - Notes:
+2026-10-14 09:19:51 - INFO - [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2026-10-14 09:19:51 - INFO - ------------------------------------------------------------
+2026-10-14 09:19:51 - INFO - H2 RESULT: Effect of Customer Satisfaction (M) on Rating (Y), controlling for X
+2026-10-14 09:19:51 - INFO -   customer_satisfaction_M (Customer Satisfaction) coefficient: 0.3503
+2026-10-14 09:19:51 - INFO -   Significant (p < 0.001) ***
+2026-10-14 09:19:51 - INFO -   H2 Conclusion: SUPPORTED — M significantly predicts Y.
+2026-10-14 09:19:51 - INFO - H3 RESULT: Direct Effect of Service Quality (X) on Rating (Y), controlling for M
+2026-10-14 09:19:51 - INFO -   service_quality_X (Service Quality) coefficient: 0.3784
+2026-10-14 09:19:51 - INFO -   Significant (p < 0.001) ***
+2026-10-14 09:19:51 - INFO -   H3 Conclusion: SUPPORTED — X has a significant direct effect on Y.
+2026-10-14 09:19:51 - INFO - H4 RESULT: Mediation — Does M mediate the effect of X on Y?
+2026-10-14 09:19:51 - INFO -   Path a (X → M, Model 1): Significant
+2026-10-14 09:19:51 - INFO -   Path b (M → Y, Model 2): Significant
+2026-10-14 09:19:51 - INFO -   H4 Conclusion: SUPPORTED — Both path a and path b are significant.
+2026-10-14 09:19:51 - INFO -   Sentiment (M) mediates the effect of Service Quality (X) on Review Rating (Y).
+2026-10-14 09:19:51 - INFO -   Model R²: 0.1491 | F-stat p: 0.0000
+2026-10-14 09:19:51 - INFO - ------------------------------------------------------------
+2026-10-14 09:19:51 - INFO - Text report saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/ols_regression_results.txt
+2026-10-14 09:19:51 - INFO - Coefficient table saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/ols_coefficients.csv
+2026-10-14 09:29:11 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_scored.csv
+2026-10-14 09:29:11 - INFO - Loaded 1095 rows.
+2026-10-14 09:29:11 - INFO - No missing values found. Analysing 1095 rows.
+2026-10-14 09:29:11 - INFO - X distribution — {-1: 181, 0: 611, 1: 303}
+2026-10-14 09:29:11 - INFO - M distribution — {-1: 355, 0: 110, 1: 630}
+2026-10-14 09:29:11 - INFO - Y distribution — {1: 126, 2: 41, 3: 44, 4: 179, 5: 705}
+2026-10-14 09:29:11 - INFO - ============================================================
+2026-10-14 09:29:11 - INFO - STAGE 1: CORRELATION MATRIX (X, M, Y)
+2026-10-14 09:29:11 - INFO - ============================================================
+2026-10-14 09:29:11 - INFO - Method: Pearson correlation (point-biserial for ordinal vs continuous)
+2026-10-14 09:29:11 - INFO -                                                  service_quality_X (Service Quality)  ...  review_rating_Y (Star Rating)
+2026-10-14 09:29:11 - INFO - service_quality_X (Service Quality)                                         1.000000  ...                       0.245377
+2026-10-14 09:29:11 - INFO - customer_satisfaction_M (Customer Satisfaction)                             0.553565  ...                       0.271594
+2026-10-14 09:29:11 - INFO - review_rating_Y (Star Rating)                                               0.245377  ...                       1.000000
+2026-10-14 09:29:11 - INFO - 
+2026-10-14 09:29:11 - INFO - [3 rows x 3 columns]
+2026-10-14 09:29:11 - INFO - ============================================================
+2026-10-14 09:29:11 - INFO - STAGE 1.5: VARIANCE INFLATION FACTOR (VIF) — X and M
+2026-10-14 09:29:11 - INFO - ============================================================
+2026-10-14 09:29:11 - INFO - Checks multicollinearity between predictors in Model 2 (X + M → Y).
+2026-10-14 09:29:11 - INFO - Rule of thumb: VIF < 5 = acceptable, VIF > 10 = problematic.
+2026-10-14 09:29:11 - INFO -               Predictor    VIF
+2026-10-14 09:29:11 - INFO -       service_quality_X 1.4418
+2026-10-14 09:29:11 - INFO - customer_satisfaction_M 1.4418
+2026-10-14 09:29:11 - INFO -   [OK] service_quality_X VIF = 1.4418 — acceptable.
+2026-10-14 09:29:11 - INFO -   [OK] customer_satisfaction_M VIF = 1.4418 — acceptable.
+2026-10-14 09:29:11 - INFO - ============================================================
+2026-10-14 09:29:11 - INFO - STAGE 2: OLS MODEL 1 — X -> M
+2026-10-14 09:29:11 - INFO - Does service quality predict customer sentiment?
+2026-10-14 09:29:11 - INFO - ============================================================
+2026-10-14 09:29:11 - INFO -                                OLS Regression Results                              
+2026-10-14 09:29:11 - INFO - ===================================================================================
+2026-10-14 09:29:11 - INFO - Dep. Variable:     customer_satisfaction_M   R-squared:                       0.306
+2026-10-14 09:29:11 - INFO - Model:                                 OLS   Adj. R-squared:                  0.306
+2026-10-14 09:29:11 - INFO - Method:                      Least Squares   F-statistic:                     482.9
+2026-10-14 09:29:11 - INFO - Date:                     Wed, 14 Oct 2026   Prob (F-statistic):           6.21e-89
+2026-10-14 09:29:11 - INFO - Time:                             09:29:11   Log-Likelihood:                -1255.6
+2026-10-14 09:29:11 - INFO - No. Observations:                     1095   AIC:                             2515.
+2026-10-14 09:29:11 - INFO - Df Residuals:                         1093   BIC:                             2525.
+2026-10-14 09:29:11 - INFO - Df Model:                                1                                         
+2026-10-14 09:29:11 - INFO - Covariance Type:                 nonrobust                                         
+2026-10-14 09:29:11 - INFO - =====================================================================================
+2026-10-14 09:29:11 - INFO -                         coef    std err          t      P>|t|      [0.025      0.975]
+2026-10-14 09:29:11 - INFO - -------------------------------------------------------------------------------------
+2026-10-14 09:29:11 - INFO - const                 0.1651      0.023      7.064      0.000       0.119       0.211
+2026-10-14 09:29:11 - INFO - service_quality_X     0.7724      0.035     21.975      0.000       0.703       0.841
+2026-10-14 09:29:11 - INFO - ==============================================================================
+2026-10-14 09:29:11 - INFO - Omnibus:                       39.093   Durbin-Watson:                   1.963
+2026-10-14 09:29:11 - INFO - Prob(Omnibus):                  0.000   Jarque-Bera (JB):               34.249
+2026-10-14 09:29:11 - INFO - Skew:                          -0.369   Prob(JB):                     3.66e-08
+2026-10-14 09:29:11 - INFO - Kurtosis:                       2.545   Cond. No.                         1.56
+2026-10-14 09:29:11 - INFO - ==============================================================================
+2026-10-14 09:29:11 - INFO - 
+2026-10-14 09:29:11 - INFO - Notes:
+2026-10-14 09:29:11 - INFO - [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2026-10-14 09:29:11 - INFO - ------------------------------------------------------------
+2026-10-14 09:29:11 - INFO - H1 RESULT: Effect of Service Quality (X) on Customer Satisfaction (M)
+2026-10-14 09:29:11 - INFO -   service_quality_X (Service Quality) coefficient: 0.7724
+2026-10-14 09:29:11 - INFO -   Significant (p < 0.001) ***
+2026-10-14 09:29:11 - INFO -   Model R²: 0.3064 | F-stat p: 0.0000
+2026-10-14 09:29:11 - INFO -   H1 Conclusion: SUPPORTED — X significantly predicts M.
+2026-10-14 09:29:11 - INFO - ------------------------------------------------------------
+2026-10-14 09:29:11 - INFO - ============================================================
+2026-10-14 09:29:11 - INFO - STAGE 3: OLS MODEL 2 — X + M -> Y
+2026-10-14 09:29:11 - INFO - Do service quality and customer satisfaction explain review rating?
+2026-10-14 09:29:11 - INFO - ============================================================
+2026-10-14 09:29:11 - INFO -                             OLS Regression Results                            
+2026-10-14 09:29:11 - INFO - ==============================================================================
+2026-10-14 09:29:11 - INFO - Dep. Variable:          review_rating   R-squared:                       0.087
+2026-10-14 09:29:11 - INFO - Model:                            OLS   Adj. R-squared:                  0.085
+2026-10-14 09:29:11 - INFO - Method:                 Least Squares   F-statistic:                     51.89
+2026-10-14 09:29:11 - INFO - Date:                Wed, 14 Oct 2026   Prob (F-statistic):           2.97e-22
+2026-10-14 09:29:11 - INFO - Time:                        09:29:11   Log-Likelihood:                -1836.6
+2026-10-14 09:29:11 - INFO - No. Observations:                1095   AIC:                             3679.
+2026-10-14 09:29:11 - INFO - Df Residuals:                    1092   BIC:                             3694.
+2026-10-14 09:29:11 - INFO - Df Model:                           2                                         
+2026-10-14 09:29:11 - INFO - Covariance Type:            nonrobust                                         
+2026-10-14 09:29:11 - INFO - ===========================================================================================
+2026-10-14 09:29:11 - INFO -                               coef    std err          t      P>|t|      [0.025      0.975]
+2026-10-14 09:29:11 - INFO - -------------------------------------------------------------------------------------------
+2026-10-14 09:29:11 - INFO - const                       4.0792      0.041    100.373      0.000       3.999       4.159
+2026-10-14 09:29:11 - INFO - service_quality_X           0.2832      0.072      3.946      0.000       0.142       0.424
+2026-10-14 09:29:11 - INFO - customer_satisfaction_M     0.2900      0.051      5.637      0.000       0.189       0.391
+2026-10-14 09:29:11 - INFO - ==============================================================================
+2026-10-14 09:29:11 - INFO - Omnibus:                      221.481   Durbin-Watson:                   1.835
+2026-10-14 09:29:11 - INFO - Prob(Omnibus):                  0.000   Jarque-Bera (JB):              367.606
+2026-10-14 09:29:11 - INFO - Skew:                          -1.355   Prob(JB):                     1.50e-80
+2026-10-14 09:29:11 - INFO - Kurtosis:                       3.842   Cond. No.                         2.33
+2026-10-14 09:29:11 - INFO - ==============================================================================
+2026-10-14 09:29:11 - INFO - 
+2026-10-14 09:29:11 - INFO - Notes:
+2026-10-14 09:29:11 - INFO - [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2026-10-14 09:29:11 - INFO - ------------------------------------------------------------
+2026-10-14 09:29:11 - INFO - H2 RESULT: Effect of Customer Satisfaction (M) on Rating (Y), controlling for X
+2026-10-14 09:29:11 - INFO -   customer_satisfaction_M (Customer Satisfaction) coefficient: 0.2900
+2026-10-14 09:29:11 - INFO -   Significant (p < 0.001) ***
+2026-10-14 09:29:11 - INFO -   H2 Conclusion: SUPPORTED — M significantly predicts Y.
+2026-10-14 09:29:11 - INFO - H3 RESULT: Direct Effect of Service Quality (X) on Rating (Y), controlling for M
+2026-10-14 09:29:11 - INFO -   service_quality_X (Service Quality) coefficient: 0.2832
+2026-10-14 09:29:11 - INFO -   Significant (p < 0.001) ***
+2026-10-14 09:29:11 - INFO -   H3 Conclusion: SUPPORTED — X has a significant direct effect on Y.
+2026-10-14 09:29:11 - INFO - H4 RESULT: Mediation — Does M mediate the effect of X on Y?
+2026-10-14 09:29:11 - INFO -   Path a (X → M, Model 1): Significant
+2026-10-14 09:29:11 - INFO -   Path b (M → Y, Model 2): Significant
+2026-10-14 09:29:11 - INFO -   H4 Conclusion: SUPPORTED — Both path a and path b are significant.
+2026-10-14 09:29:11 - INFO -   Sentiment (M) mediates the effect of Service Quality (X) on Review Rating (Y).
+2026-10-14 09:29:11 - INFO -   Model R²: 0.0868 | F-stat p: 0.0000
+2026-10-14 09:29:11 - INFO - ------------------------------------------------------------
+2026-10-14 09:29:11 - INFO - Text report saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/ols_regression_results.txt
+2026-10-14 09:29:11 - INFO - Coefficient table saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/ols_coefficients.csv
+2026-10-14 10:15:56 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_scored.csv
+2026-10-14 10:15:56 - INFO - Loaded 1095 rows.
+2026-10-14 10:15:56 - INFO - No missing values found. Analysing 1095 rows.
+2026-10-14 10:15:56 - INFO - X distribution — {-1: 120, 0: 631, 1: 344}
+2026-10-14 10:15:56 - INFO - M distribution — {-1: 171, 0: 161, 1: 763}
+2026-10-14 10:15:56 - INFO - Y distribution — {1: 126, 2: 41, 3: 44, 4: 179, 5: 705}
+2026-10-14 10:15:56 - INFO - ============================================================
+2026-10-14 10:15:56 - INFO - STAGE 1: CORRELATION MATRIX (X, M, Y)
+2026-10-14 10:15:56 - INFO - ============================================================
+2026-10-14 10:15:56 - INFO - Method: Pearson correlation (point-biserial for ordinal vs continuous)
+2026-10-14 10:15:56 - INFO -                                                  service_quality_X (Service Quality)  ...  review_rating_Y (Star Rating)
+2026-10-14 10:15:56 - INFO - service_quality_X (Service Quality)                                         1.000000  ...                       0.323813
+2026-10-14 10:15:56 - INFO - customer_satisfaction_M (Customer Satisfaction)                             0.568189  ...                       0.520600
+2026-10-14 10:15:56 - INFO - review_rating_Y (Star Rating)                                               0.323813  ...                       1.000000
+2026-10-14 10:15:56 - INFO - 
+2026-10-14 10:15:56 - INFO - [3 rows x 3 columns]
+2026-10-14 10:15:56 - INFO - ============================================================
+2026-10-14 10:15:56 - INFO - STAGE 1.5: VARIANCE INFLATION FACTOR (VIF) — X and M
+2026-10-14 10:15:56 - INFO - ============================================================
+2026-10-14 10:15:56 - INFO - Checks multicollinearity between predictors in Model 2 (X + M → Y).
+2026-10-14 10:15:56 - INFO - Rule of thumb: VIF < 5 = acceptable, VIF > 10 = problematic.
+2026-10-14 10:15:56 - INFO -               Predictor    VIF
+2026-10-14 10:15:56 - INFO -       service_quality_X 1.4768
+2026-10-14 10:15:56 - INFO - customer_satisfaction_M 1.4768
+2026-10-14 10:15:56 - INFO -   [OK] service_quality_X VIF = 1.4768 — acceptable.
+2026-10-14 10:15:56 - INFO -   [OK] customer_satisfaction_M VIF = 1.4768 — acceptable.
+2026-10-14 10:15:56 - INFO - ============================================================
+2026-10-14 10:15:56 - INFO - STAGE 2: OLS MODEL 1 — X -> M
+2026-10-14 10:15:56 - INFO - Does service quality predict customer sentiment?
+2026-10-14 10:15:56 - INFO - ============================================================
+2026-10-14 10:15:56 - INFO -                                OLS Regression Results                              
+2026-10-14 10:15:56 - INFO - ===================================================================================
+2026-10-14 10:15:56 - INFO - Dep. Variable:     customer_satisfaction_M   R-squared:                       0.323
+2026-10-14 10:15:56 - INFO - Model:                                 OLS   Adj. R-squared:                  0.322
+2026-10-14 10:15:56 - INFO - Method:                      Least Squares   F-statistic:                     521.1
+2026-10-14 10:15:56 - INFO - Date:                     Wed, 14 Oct 2026   Prob (F-statistic):           1.26e-94
+2026-10-14 10:15:56 - INFO - Time:                             10:15:56   Log-Likelihood:                -1023.5
+2026-10-14 10:15:56 - INFO - No. Observations:                     1095   AIC:                             2051.
+2026-10-14 10:15:56 - INFO - Df Residuals:                         1093   BIC:                             2061.
+2026-10-14 10:15:56 - INFO - Df Model:                                1                                         
+2026-10-14 10:15:56 - INFO - Covariance Type:                 nonrobust                                         
+2026-10-14 10:15:56 - INFO - =====================================================================================
+2026-10-14 10:15:56 - INFO -                         coef    std err          t      P>|t|      [0.025      0.975]
+2026-10-14 10:15:56 - INFO - -------------------------------------------------------------------------------------
+2026-10-14 10:15:56 - INFO - const                 0.3998      0.020     20.365      0.000       0.361       0.438
+2026-10-14 10:15:56 - INFO - service_quality_X     0.6885      0.030     22.827      0.000       0.629       0.748
+2026-10-14 10:15:56 - INFO - ==============================================================================
+2026-10-14 10:15:56 - INFO - Omnibus:                       77.629   Durbin-Watson:                   1.914
+2026-10-14 10:15:56 - INFO - Prob(Omnibus):                  0.000   Jarque-Bera (JB):               92.696
+2026-10-14 10:15:56 - INFO - Skew:                          -0.688   Prob(JB):                     7.44e-21
+2026-10-14 10:15:56 - INFO - Kurtosis:                       3.375   Cond. No.                         1.72
+2026-10-14 10:15:56 - INFO - ==============================================================================
+2026-10-14 10:15:56 - INFO - 
+2026-10-14 10:15:56 - INFO - Notes:
+2026-10-14 10:15:56 - INFO - [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2026-10-14 10:15:56 - INFO - ------------------------------------------------------------
+2026-10-14 10:15:56 - INFO - H1 RESULT: Effect of Service Quality (X) on Customer Satisfaction (M)
+2026-10-14 10:15:56 - INFO -   service_quality_X (Service Quality) coefficient: 0.6885
+2026-10-14 10:15:56 - INFO -   Significant (p < 0.001) ***
+2026-10-14 10:15:56 - INFO -   Model R²: 0.3228 | F-stat p: 0.0000
+2026-10-14 10:15:56 - INFO -   H1 Conclusion: SUPPORTED — X significantly predicts M.
+2026-10-14 10:15:56 - INFO - ------------------------------------------------------------
+2026-10-14 10:15:56 - INFO - ============================================================
+2026-10-14 10:15:56 - INFO - STAGE 3: OLS MODEL 2 — X + M -> Y
+2026-10-14 10:15:56 - INFO - Do service quality and customer satisfaction explain review rating?
+2026-10-14 10:15:56 - INFO - ============================================================
+2026-10-14 10:15:56 - INFO -                             OLS Regression Results                            
+2026-10-14 10:15:56 - INFO - ==============================================================================
+2026-10-14 10:15:56 - INFO - Dep. Variable:          review_rating   R-squared:                       0.272
+2026-10-14 10:15:56 - INFO - Model:                            OLS   Adj. R-squared:                  0.271
+2026-10-14 10:15:56 - INFO - Method:                 Least Squares   F-statistic:                     204.2
+2026-10-14 10:15:56 - INFO - Date:                Wed, 14 Oct 2026   Prob (F-statistic):           4.61e-76
+2026-10-14 10:15:56 - INFO - Time:                        10:15:56   Log-Likelihood:                -1712.4
+2026-10-14 10:15:56 - INFO - No. Observations:                1095   AIC:                             3431.
+2026-10-14 10:15:56 - INFO - Df Residuals:                    1092   BIC:                             3446.
+2026-10-14 10:15:56 - INFO - Df Model:                           2                                         
+2026-10-14 10:15:56 - INFO - Covariance Type:            nonrobust                                         
+2026-10-14 10:15:56 - INFO - ===========================================================================================
+2026-10-14 10:15:56 - INFO -                               coef    std err          t      P>|t|      [0.025      0.975]
+2026-10-14 10:15:56 - INFO - -------------------------------------------------------------------------------------------
+2026-10-14 10:15:56 - INFO - const                       3.6787      0.043     85.009      0.000       3.594       3.764
+2026-10-14 10:15:56 - INFO - service_quality_X           0.0907      0.069      1.319      0.188      -0.044       0.226
+2026-10-14 10:15:56 - INFO - customer_satisfaction_M     0.8995      0.057     15.845      0.000       0.788       1.011
+2026-10-14 10:15:56 - INFO - ==============================================================================
+2026-10-14 10:15:56 - INFO - Omnibus:                      156.337   Durbin-Watson:                   1.942
+2026-10-14 10:15:56 - INFO - Prob(Omnibus):                  0.000   Jarque-Bera (JB):              244.344
+2026-10-14 10:15:56 - INFO - Skew:                          -0.962   Prob(JB):                     8.74e-54
+2026-10-14 10:15:56 - INFO - Kurtosis:                       4.285   Cond. No.                         2.93
+2026-10-14 10:15:56 - INFO - ==============================================================================
+2026-10-14 10:15:56 - INFO - 
+2026-10-14 10:15:56 - INFO - Notes:
+2026-10-14 10:15:56 - INFO - [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2026-10-14 10:15:56 - INFO - ------------------------------------------------------------
+2026-10-14 10:15:56 - INFO - H2 RESULT: Effect of Customer Satisfaction (M) on Rating (Y), controlling for X
+2026-10-14 10:15:56 - INFO -   customer_satisfaction_M (Customer Satisfaction) coefficient: 0.8995
+2026-10-14 10:15:56 - INFO -   Significant (p < 0.001) ***
+2026-10-14 10:15:56 - INFO -   H2 Conclusion: SUPPORTED — M significantly predicts Y.
+2026-10-14 10:15:56 - INFO - H3 RESULT: Direct Effect of Service Quality (X) on Rating (Y), controlling for M
+2026-10-14 10:15:56 - INFO -   service_quality_X (Service Quality) coefficient: 0.0907
+2026-10-14 10:15:56 - INFO -   Not Significant (p = 0.1876)
+2026-10-14 10:15:56 - INFO -   H3 Conclusion: NOT SUPPORTED — X has no significant direct effect on Y after controlling for M.
+2026-10-14 10:15:56 - INFO - H4 RESULT: Mediation — Does M mediate the effect of X on Y?
+2026-10-14 10:15:56 - INFO -   Path a (X → M, Model 1): Significant
+2026-10-14 10:15:56 - INFO -   Path b (M → Y, Model 2): Significant
+2026-10-14 10:15:56 - INFO -   H4 Conclusion: SUPPORTED — Both path a and path b are significant.
+2026-10-14 10:15:56 - INFO -   Sentiment (M) mediates the effect of Service Quality (X) on Review Rating (Y).
+2026-10-14 10:15:56 - INFO -   Model R²: 0.2722 | F-stat p: 0.0000
+2026-10-14 10:15:56 - INFO - ------------------------------------------------------------
+2026-10-14 10:15:56 - INFO - Text report saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/ols_regression_results.txt
+2026-10-14 10:15:56 - INFO - Coefficient table saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/ols_coefficients.csv
+2026-10-14 10:59:42 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_scored.csv
+2026-10-14 10:59:42 - INFO - Loaded 1096 rows.
+2026-10-14 10:59:42 - INFO - No missing values found. Analysing 1096 rows.
+2026-10-14 10:59:42 - INFO - X distribution — {-1: 151, 0: 604, 1: 341}
+2026-10-14 10:59:42 - INFO - M distribution — {-1: 194, 0: 143, 1: 759}
+2026-10-14 10:59:42 - INFO - Y distribution — {1: 126, 2: 41, 3: 44, 4: 179, 5: 706}
+2026-10-14 10:59:42 - INFO - ============================================================
+2026-10-14 10:59:42 - INFO - STAGE 1: CORRELATION MATRIX (X, M, Y)
+2026-10-14 10:59:42 - INFO - ============================================================
+2026-10-14 10:59:42 - INFO - Method: Pearson correlation (point-biserial for ordinal vs continuous)
+2026-10-14 10:59:42 - INFO -                                                  service_quality_X (Service Quality)  ...  review_rating_Y (Star Rating)
+2026-10-14 10:59:42 - INFO - service_quality_X (Service Quality)                                         1.000000  ...                       0.380928
+2026-10-14 10:59:42 - INFO - customer_satisfaction_M (Customer Satisfaction)                             0.606090  ...                       0.553843
+2026-10-14 10:59:42 - INFO - review_rating_Y (Star Rating)                                               0.380928  ...                       1.000000
+2026-10-14 10:59:42 - INFO - 
+2026-10-14 10:59:42 - INFO - [3 rows x 3 columns]
+2026-10-14 10:59:42 - INFO - ============================================================
+2026-10-14 10:59:42 - INFO - STAGE 1.5: VARIANCE INFLATION FACTOR (VIF) — X and M
+2026-10-14 10:59:42 - INFO - ============================================================
+2026-10-14 10:59:42 - INFO - Checks multicollinearity between predictors in Model 2 (X + M → Y).
+2026-10-14 10:59:42 - INFO - Rule of thumb: VIF < 5 = acceptable, VIF > 10 = problematic.
+2026-10-14 10:59:42 - INFO -               Predictor    VIF
+2026-10-14 10:59:42 - INFO -       service_quality_X 1.5806
+2026-10-14 10:59:42 - INFO - customer_satisfaction_M 1.5806
+2026-10-14 10:59:42 - INFO -   [OK] service_quality_X VIF = 1.5806 — acceptable.
+2026-10-14 10:59:42 - INFO -   [OK] customer_satisfaction_M VIF = 1.5806 — acceptable.
+2026-10-14 10:59:42 - INFO - ============================================================
+2026-10-14 10:59:42 - INFO - STAGE 2: OLS MODEL 1 — X -> M
+2026-10-14 10:59:42 - INFO - Does service quality predict customer sentiment?
+2026-10-14 10:59:42 - INFO - ============================================================
+2026-10-14 10:59:42 - INFO -                                OLS Regression Results                              
+2026-10-14 10:59:42 - INFO - ===================================================================================
+2026-10-14 10:59:42 - INFO - Dep. Variable:     customer_satisfaction_M   R-squared:                       0.367
+2026-10-14 10:59:42 - INFO - Model:                                 OLS   Adj. R-squared:                  0.367
+2026-10-14 10:59:42 - INFO - Method:                      Least Squares   F-statistic:                     635.2
+2026-10-14 10:59:42 - INFO - Date:                     Wed, 14 Oct 2026   Prob (F-statistic):          6.88e-111
+2026-10-14 10:59:42 - INFO - Time:                             10:59:42   Log-Likelihood:                -1027.8
+2026-10-14 10:59:42 - INFO - No. Observations:                     1096   AIC:                             2060.
+2026-10-14 10:59:42 - INFO - Df Residuals:                         1094   BIC:                             2070.
+2026-10-14 10:59:42 - INFO - Df Model:                                1                                         
+2026-10-14 10:59:42 - INFO - Covariance Type:                 nonrobust                                         
+2026-10-14 10:59:42 - INFO - =====================================================================================
+2026-10-14 10:59:42 - INFO -                         coef    std err          t      P>|t|      [0.025      0.975]
+2026-10-14 10:59:42 - INFO - -------------------------------------------------------------------------------------
+2026-10-14 10:59:42 - INFO - const                 0.3894      0.019     20.128      0.000       0.351       0.427
+2026-10-14 10:59:42 - INFO - service_quality_X     0.7277      0.029     25.204      0.000       0.671       0.784
+2026-10-14 10:59:42 - INFO - ==============================================================================
+2026-10-14 10:59:42 - INFO - Omnibus:                       51.365   Durbin-Watson:                   1.940
+2026-10-14 10:59:42 - INFO - Prob(Omnibus):                  0.000   Jarque-Bera (JB):               57.434
+2026-10-14 10:59:42 - INFO - Skew:                          -0.550   Prob(JB):                     3.38e-13
+2026-10-14 10:59:42 - INFO - Kurtosis:                       3.219   Cond. No.                         1.62
+2026-10-14 10:59:42 - INFO - ==============================================================================
+2026-10-14 10:59:42 - INFO - 
+2026-10-14 10:59:42 - INFO - Notes:
+2026-10-14 10:59:42 - INFO - [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2026-10-14 10:59:42 - INFO - ------------------------------------------------------------
+2026-10-14 10:59:42 - INFO - H1 RESULT: Effect of Service Quality (X) on Customer Satisfaction (M)
+2026-10-14 10:59:42 - INFO -   service_quality_X (Service Quality) coefficient: 0.7277
+2026-10-14 10:59:42 - INFO -   Significant (p < 0.001) ***
+2026-10-14 10:59:42 - INFO -   Model R²: 0.3673 | F-stat p: 0.0000
+2026-10-14 10:59:42 - INFO -   H1 Conclusion: SUPPORTED — X significantly predicts M.
+2026-10-14 10:59:42 - INFO - ------------------------------------------------------------
+2026-10-14 10:59:42 - INFO - ============================================================
+2026-10-14 10:59:42 - INFO - STAGE 3: OLS MODEL 2 — X + M -> Y
+2026-10-14 10:59:42 - INFO - Do service quality and customer satisfaction explain review rating?
+2026-10-14 10:59:42 - INFO - ============================================================
+2026-10-14 10:59:42 - INFO -                             OLS Regression Results                            
+2026-10-14 10:59:42 - INFO - ==============================================================================
+2026-10-14 10:59:42 - INFO - Dep. Variable:          review_rating   R-squared:                       0.310
+2026-10-14 10:59:42 - INFO - Model:                            OLS   Adj. R-squared:                  0.309
+2026-10-14 10:59:42 - INFO - Method:                 Least Squares   F-statistic:                     245.5
+2026-10-14 10:59:42 - INFO - Date:                Wed, 14 Oct 2026   Prob (F-statistic):           8.68e-89
+2026-10-14 10:59:42 - INFO - Time:                        10:59:42   Log-Likelihood:                -1684.4
+2026-10-14 10:59:42 - INFO - No. Observations:                1096   AIC:                             3375.
+2026-10-14 10:59:42 - INFO - Df Residuals:                    1093   BIC:                             3390.
+2026-10-14 10:59:42 - INFO - Df Model:                           2                                         
+2026-10-14 10:59:42 - INFO - Covariance Type:            nonrobust                                         
+2026-10-14 10:59:42 - INFO - ===========================================================================================
+2026-10-14 10:59:42 - INFO -                               coef    std err          t      P>|t|      [0.025      0.975]
+2026-10-14 10:59:42 - INFO - -------------------------------------------------------------------------------------------
+2026-10-14 10:59:42 - INFO - const                       3.6996      0.041     89.702      0.000       3.619       3.781
+2026-10-14 10:59:42 - INFO - service_quality_X           0.1497      0.066      2.264      0.024       0.020       0.279
+2026-10-14 10:59:42 - INFO - customer_satisfaction_M     0.8899      0.055     16.160      0.000       0.782       0.998
+2026-10-14 10:59:42 - INFO - ==============================================================================
+2026-10-14 10:59:42 - INFO - Omnibus:                      154.302   Durbin-Watson:                   1.975
+2026-10-14 10:59:42 - INFO - Prob(Omnibus):                  0.000   Jarque-Bera (JB):              256.466
+2026-10-14 10:59:42 - INFO - Skew:                          -0.916   Prob(JB):                     2.04e-56
+2026-10-14 10:59:42 - INFO - Kurtosis:                       4.503   Cond. No.                         2.93
+2026-10-14 10:59:42 - INFO - ==============================================================================
+2026-10-14 10:59:42 - INFO - 
+2026-10-14 10:59:42 - INFO - Notes:
+2026-10-14 10:59:42 - INFO - [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2026-10-14 10:59:42 - INFO - ------------------------------------------------------------
+2026-10-14 10:59:42 - INFO - H2 RESULT: Effect of Customer Satisfaction (M) on Rating (Y), controlling for X
+2026-10-14 10:59:42 - INFO -   customer_satisfaction_M (Customer Satisfaction) coefficient: 0.8899
+2026-10-14 10:59:42 - INFO -   Significant (p < 0.001) ***
+2026-10-14 10:59:42 - INFO -   H2 Conclusion: SUPPORTED — M significantly predicts Y.
+2026-10-14 10:59:42 - INFO - H3 RESULT: Direct Effect of Service Quality (X) on Rating (Y), controlling for M
+2026-10-14 10:59:42 - INFO -   service_quality_X (Service Quality) coefficient: 0.1497
+2026-10-14 10:59:42 - INFO -   Significant (p = 0.0238) *
+2026-10-14 10:59:42 - INFO -   H3 Conclusion: SUPPORTED — X has a significant direct effect on Y.
+2026-10-14 10:59:42 - INFO - H4 RESULT: Mediation — Does M mediate the effect of X on Y?
+2026-10-14 10:59:42 - INFO -   Path a (X → M, Model 1): Significant
+2026-10-14 10:59:42 - INFO -   Path b (M → Y, Model 2): Significant
+2026-10-14 10:59:42 - INFO -   H4 Conclusion: SUPPORTED — Both path a and path b are significant.
+2026-10-14 10:59:42 - INFO -   Sentiment (M) mediates the effect of Service Quality (X) on Review Rating (Y).
+2026-10-14 10:59:42 - INFO -   Model R²: 0.3100 | F-stat p: 0.0000
+2026-10-14 10:59:42 - INFO - ------------------------------------------------------------
+2026-10-14 10:59:42 - INFO - Text report saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/ols_regression_results.txt
+2026-10-14 10:59:42 - INFO - Coefficient table saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/ols_coefficients.csv
+2026-10-14 11:15:30 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_scored.csv
+2026-10-14 11:15:30 - INFO - Loaded 1096 rows.
+2026-10-14 11:15:30 - INFO - No missing values found. Analysing 1096 rows.
+2026-10-14 11:15:30 - INFO - X distribution — {-1: 149, 0: 594, 1: 353}
+2026-10-14 11:15:30 - INFO - M distribution — {-1: 188, 0: 111, 1: 797}
+2026-10-14 11:15:30 - INFO - Y distribution — {1: 126, 2: 41, 3: 44, 4: 179, 5: 706}
+2026-10-14 11:15:30 - INFO - ============================================================
+2026-10-14 11:15:30 - INFO - STAGE 1: CORRELATION MATRIX (X, M, Y)
+2026-10-14 11:15:30 - INFO - ============================================================
+2026-10-14 11:15:30 - INFO - Method: Pearson correlation (point-biserial for ordinal vs continuous)
+2026-10-14 11:15:30 - INFO -                                                  service_quality_X (Service Quality)  ...  review_rating_Y (Star Rating)
+2026-10-14 11:15:30 - INFO - service_quality_X (Service Quality)                                         1.000000  ...                       0.411411
+2026-10-14 11:15:30 - INFO - customer_satisfaction_M (Customer Satisfaction)                             0.594502  ...                       0.590008
+2026-10-14 11:15:30 - INFO - review_rating_Y (Star Rating)                                               0.411411  ...                       1.000000
+2026-10-14 11:15:30 - INFO - 
+2026-10-14 11:15:30 - INFO - [3 rows x 3 columns]
+2026-10-14 11:15:30 - INFO - ============================================================
+2026-10-14 11:15:30 - INFO - STAGE 1.5: VARIANCE INFLATION FACTOR (VIF) — X and M
+2026-10-14 11:15:30 - INFO - ============================================================
+2026-10-14 11:15:30 - INFO - Checks multicollinearity between predictors in Model 2 (X + M → Y).
+2026-10-14 11:15:30 - INFO - Rule of thumb: VIF < 5 = acceptable, VIF > 10 = problematic.
+2026-10-14 11:15:30 - INFO -               Predictor    VIF
+2026-10-14 11:15:30 - INFO -       service_quality_X 1.5466
+2026-10-14 11:15:30 - INFO - customer_satisfaction_M 1.5466
+2026-10-14 11:15:30 - INFO -   [OK] service_quality_X VIF = 1.5466 — acceptable.
+2026-10-14 11:15:30 - INFO -   [OK] customer_satisfaction_M VIF = 1.5466 — acceptable.
+2026-10-14 11:15:30 - INFO - ============================================================
+2026-10-14 11:15:30 - INFO - STAGE 2: OLS MODEL 1 — X -> M
+2026-10-14 11:15:30 - INFO - Does service quality predict customer sentiment?
+2026-10-14 11:15:30 - INFO - ============================================================
+2026-10-14 11:15:30 - INFO -                                OLS Regression Results                              
+2026-10-14 11:15:30 - INFO - ===================================================================================
+2026-10-14 11:15:30 - INFO - Dep. Variable:     customer_satisfaction_M   R-squared:                       0.353
+2026-10-14 11:15:30 - INFO - Model:                                 OLS   Adj. R-squared:                  0.353
+2026-10-14 11:15:30 - INFO - Method:                      Least Squares   F-statistic:                     598.0
+2026-10-14 11:15:30 - INFO - Date:                     Wed, 14 Oct 2026   Prob (F-statistic):          1.03e-105
+2026-10-14 11:15:30 - INFO - Time:                             11:15:30   Log-Likelihood:                -1027.0
+2026-10-14 11:15:30 - INFO - No. Observations:                     1096   AIC:                             2058.
+2026-10-14 11:15:30 - INFO - Df Residuals:                         1094   BIC:                             2068.
+2026-10-14 11:15:30 - INFO - Df Model:                                1                                         
+2026-10-14 11:15:30 - INFO - Covariance Type:                 nonrobust                                         
+2026-10-14 11:15:30 - INFO - =====================================================================================
+2026-10-14 11:15:30 - INFO -                         coef    std err          t      P>|t|      [0.025      0.975]
+2026-10-14 11:15:30 - INFO - -------------------------------------------------------------------------------------
+2026-10-14 11:15:30 - INFO - const                 0.4250      0.019     21.884      0.000       0.387       0.463
+2026-10-14 11:15:30 - INFO - service_quality_X     0.7018      0.029     24.454      0.000       0.645       0.758
+2026-10-14 11:15:30 - INFO - ==============================================================================
+2026-10-14 11:15:30 - INFO - Omnibus:                       76.330   Durbin-Watson:                   1.880
+2026-10-14 11:15:30 - INFO - Prob(Omnibus):                  0.000   Jarque-Bera (JB):               90.810
+2026-10-14 11:15:30 - INFO - Skew:                          -0.682   Prob(JB):                     1.91e-20
+2026-10-14 11:15:30 - INFO - Kurtosis:                       3.355   Cond. No.                         1.63
+2026-10-14 11:15:30 - INFO - ==============================================================================
+2026-10-14 11:15:30 - INFO - 
+2026-10-14 11:15:30 - INFO - Notes:
+2026-10-14 11:15:30 - INFO - [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2026-10-14 11:15:30 - INFO - ------------------------------------------------------------
+2026-10-14 11:15:30 - INFO - H1 RESULT: Effect of Service Quality (X) on Customer Satisfaction (M)
+2026-10-14 11:15:30 - INFO -   service_quality_X (Service Quality) coefficient: 0.7018
+2026-10-14 11:15:30 - INFO -   Significant (p < 0.001) ***
+2026-10-14 11:15:30 - INFO -   Model R²: 0.3534 | F-stat p: 0.0000
+2026-10-14 11:15:30 - INFO -   H1 Conclusion: SUPPORTED — X significantly predicts M.
+2026-10-14 11:15:30 - INFO - ------------------------------------------------------------
+2026-10-14 11:15:30 - INFO - ============================================================
+2026-10-14 11:15:30 - INFO - STAGE 3: OLS MODEL 2 — X + M -> Y
+2026-10-14 11:15:30 - INFO - Do service quality and customer satisfaction explain review rating?
+2026-10-14 11:15:30 - INFO - ============================================================
+2026-10-14 11:15:30 - INFO -                             OLS Regression Results                            
+2026-10-14 11:15:30 - INFO - ==============================================================================
+2026-10-14 11:15:30 - INFO - Dep. Variable:          review_rating   R-squared:                       0.354
+2026-10-14 11:15:30 - INFO - Model:                            OLS   Adj. R-squared:                  0.353
+2026-10-14 11:15:30 - INFO - Method:                 Least Squares   F-statistic:                     299.2
+2026-10-14 11:15:30 - INFO - Date:                Wed, 14 Oct 2026   Prob (F-statistic):          2.32e-104
+2026-10-14 11:15:30 - INFO - Time:                        11:15:30   Log-Likelihood:                -1648.4
+2026-10-14 11:15:30 - INFO - No. Observations:                1096   AIC:                             3303.
+2026-10-14 11:15:30 - INFO - Df Residuals:                    1093   BIC:                             3318.
+2026-10-14 11:15:30 - INFO - Df Model:                           2                                         
+2026-10-14 11:15:30 - INFO - Covariance Type:            nonrobust                                         
+2026-10-14 11:15:30 - INFO - ===========================================================================================
+2026-10-14 11:15:30 - INFO -                               coef    std err          t      P>|t|      [0.025      0.975]
+2026-10-14 11:15:30 - INFO - -------------------------------------------------------------------------------------------
+2026-10-14 11:15:30 - INFO - const                       3.6245      0.041     88.241      0.000       3.544       3.705
+2026-10-14 11:15:30 - INFO - service_quality_X           0.1953      0.063      3.102      0.002       0.072       0.319
+2026-10-14 11:15:30 - INFO - customer_satisfaction_M     0.9421      0.053     17.667      0.000       0.837       1.047
+2026-10-14 11:15:30 - INFO - ==============================================================================
+2026-10-14 11:15:30 - INFO - Omnibus:                      161.582   Durbin-Watson:                   1.962
+2026-10-14 11:15:30 - INFO - Prob(Omnibus):                  0.000   Jarque-Bera (JB):              309.979
+2026-10-14 11:15:30 - INFO - Skew:                          -0.890   Prob(JB):                     4.89e-68
+2026-10-14 11:15:30 - INFO - Kurtosis:                       4.903   Cond. No.                         2.96
+2026-10-14 11:15:30 - INFO - ==============================================================================
+2026-10-14 11:15:30 - INFO - 
+2026-10-14 11:15:30 - INFO - Notes:
+2026-10-14 11:15:30 - INFO - [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2026-10-14 11:15:30 - INFO - ------------------------------------------------------------
+2026-10-14 11:15:30 - INFO - H2 RESULT: Effect of Customer Satisfaction (M) on Rating (Y), controlling for X
+2026-10-14 11:15:30 - INFO -   customer_satisfaction_M (Customer Satisfaction) coefficient: 0.9421
+2026-10-14 11:15:30 - INFO -   Significant (p < 0.001) ***
+2026-10-14 11:15:30 - INFO -   H2 Conclusion: SUPPORTED — M significantly predicts Y.
+2026-10-14 11:15:30 - INFO - H3 RESULT: Direct Effect of Service Quality (X) on Rating (Y), controlling for M
+2026-10-14 11:15:30 - INFO -   service_quality_X (Service Quality) coefficient: 0.1953
+2026-10-14 11:15:30 - INFO -   Significant (p = 0.0020) **
+2026-10-14 11:15:30 - INFO -   H3 Conclusion: SUPPORTED — X has a significant direct effect on Y.
+2026-10-14 11:15:30 - INFO - H4 RESULT: Mediation — Does M mediate the effect of X on Y?
+2026-10-14 11:15:30 - INFO -   Path a (X → M, Model 1): Significant
+2026-10-14 11:15:30 - INFO -   Path b (M → Y, Model 2): Significant
+2026-10-14 11:15:30 - INFO -   H4 Conclusion: SUPPORTED — Both path a and path b are significant.
+2026-10-14 11:15:30 - INFO -   Sentiment (M) mediates the effect of Service Quality (X) on Review Rating (Y).
+2026-10-14 11:15:30 - INFO -   Model R²: 0.3538 | F-stat p: 0.0000
+2026-10-14 11:15:30 - INFO - ------------------------------------------------------------
+2026-10-14 11:15:30 - INFO - Text report saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/ols_regression_results.txt
+2026-10-14 11:15:30 - INFO - Coefficient table saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/ols_coefficients.csv

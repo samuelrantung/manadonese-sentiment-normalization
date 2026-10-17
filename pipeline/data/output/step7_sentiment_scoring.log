@@ -1,0 +1,58 @@
+2026-08-29 12:36:03 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_preprocessed.csv
+2026-08-29 12:36:03 - INFO - Loaded 1095 rows.
+2026-08-29 12:36:03 - INFO - Lexicon loaded: 3609 positive words, 6609 negative words, 9071 unique terms (1142 appear in both files and were summed).
+2026-08-29 12:36:03 - INFO - Service keywords loaded: 50 words from /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/input/service_keywords.txt
+2026-08-29 12:36:03 - INFO - Computing customer satisfaction scores (Variable M)...
+2026-08-29 12:36:03 - INFO - Customer satisfaction (M) distribution — Positive: 552, Negative: 445, Neutral: 98
+2026-08-29 12:36:03 - INFO - Computing ABSA service quality scores (Variable X, window=±5)...
+2026-08-29 12:36:03 - INFO - Service quality (X) distribution — Positive: 273, Negative: 234, Absent: 588
+2026-08-29 12:36:03 - INFO - Output saved to: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_scored.csv
+2026-10-14 09:19:43 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_preprocessed.csv
+2026-10-14 09:19:43 - INFO - Loaded 1095 rows.
+2026-10-14 09:19:43 - INFO - Lexicon loaded: 3609 positive words, 6609 negative words, 9071 unique terms (1142 appear in both files and were summed).
+2026-10-14 09:19:43 - INFO - Service keywords loaded: 50 words from /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/input/service_keywords.txt
+2026-10-14 09:19:43 - INFO - Computing customer satisfaction scores (Variable M)...
+2026-10-14 09:19:43 - INFO - Customer satisfaction (M) distribution — Positive: 552, Negative: 445, Neutral: 98
+2026-10-14 09:19:43 - INFO - Computing ABSA service quality scores (Variable X, window=±5)...
+2026-10-14 09:19:43 - INFO - Service quality (X) distribution — Positive: 273, Negative: 234, Absent: 588
+2026-10-14 09:19:43 - INFO - Output saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_scored.csv
+2026-10-14 09:29:09 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_preprocessed.csv
+2026-10-14 09:29:09 - INFO - Loaded 1095 rows.
+2026-10-14 09:29:09 - INFO - Lexicon loaded: 3609 positive words, 6609 negative words, 9071 unique terms (1142 appear in both files and were summed).
+2026-10-14 09:29:09 - INFO - No domain_overrides.csv found; using raw InSet weights.
+2026-10-14 09:29:09 - INFO - Service keywords loaded: 48 words from /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/input/service_keywords.txt
+2026-10-14 09:29:09 - INFO - Computing customer satisfaction scores (Variable M)...
+2026-10-14 09:29:09 - INFO - Customer satisfaction (M) distribution — Positive: 630, Negative: 355, Neutral: 110
+2026-10-14 09:29:09 - INFO - Computing ABSA service quality scores (Variable X, window=±5)...
+2026-10-14 09:29:09 - INFO - Service quality (X) distribution — Positive: 303, Negative: 181, Absent: 611
+2026-10-14 09:29:09 - INFO - Output saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_scored.csv
+2026-10-14 10:15:54 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_preprocessed.csv
+2026-10-14 10:15:54 - INFO - Loaded 1095 rows.
+2026-10-14 10:15:54 - INFO - Lexicon loaded: 3609 positive words, 6609 negative words, 9071 unique terms (1142 appear in both files and were summed).
+2026-10-14 10:15:54 - INFO - Domain overrides applied: 108 words from /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/input/domain_overrides.csv
+2026-10-14 10:15:54 - INFO - Service keywords loaded: 48 words from /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/input/service_keywords.txt
+2026-10-14 10:15:54 - INFO - Computing customer satisfaction scores (Variable M)...
+2026-10-14 10:15:54 - INFO - Customer satisfaction (M) distribution — Positive: 763, Negative: 171, Neutral: 161
+2026-10-14 10:15:54 - INFO - Computing ABSA service quality scores (Variable X, window=±5)...
+2026-10-14 10:15:54 - INFO - Service quality (X) distribution — Positive: 344, Negative: 120, Absent: 631
+2026-10-14 10:15:54 - INFO - Output saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_scored.csv
+2026-10-14 10:59:41 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_preprocessed.csv
+2026-10-14 10:59:41 - INFO - Loaded 1096 rows.
+2026-10-14 10:59:41 - INFO - Lexicon loaded: 3609 positive words, 6609 negative words, 9071 unique terms (1142 appear in both files and were summed).
+2026-10-14 10:59:41 - INFO - Domain overrides applied: 108 words from /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/input/domain_overrides.csv
+2026-10-14 10:59:41 - INFO - Service keywords loaded: 48 words from /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/input/service_keywords.txt
+2026-10-14 10:59:41 - INFO - Computing customer satisfaction scores (Variable M)...
+2026-10-14 10:59:41 - INFO - Customer satisfaction (M) distribution — Positive: 759, Negative: 194, Neutral: 143
+2026-10-14 10:59:41 - INFO - Computing ABSA service quality scores (Variable X, window=±5)...
+2026-10-14 10:59:41 - INFO - Service quality (X) distribution — Positive: 341, Negative: 151, Absent: 604
+2026-10-14 10:59:41 - INFO - Output saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_scored.csv
+2026-10-14 11:15:29 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_preprocessed.csv
+2026-10-14 11:15:29 - INFO - Loaded 1096 rows.
+2026-10-14 11:15:29 - INFO - Lexicon loaded: 3609 positive words, 6609 negative words, 9071 unique terms (1142 appear in both files and were summed).
+2026-10-14 11:15:29 - INFO - Domain overrides applied: 135 words from /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/input/domain_overrides.csv
+2026-10-14 11:15:29 - INFO - Service keywords loaded: 48 words from /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/input/service_keywords.txt
+2026-10-14 11:15:29 - INFO - Computing customer satisfaction scores (Variable M)...
+2026-10-14 11:15:29 - INFO - Customer satisfaction (M) distribution — Positive: 797, Negative: 188, Neutral: 111
+2026-10-14 11:15:29 - INFO - Computing ABSA service quality scores (Variable X, window=±5)...
+2026-10-14 11:15:29 - INFO - Service quality (X) distribution — Positive: 353, Negative: 149, Absent: 594
+2026-10-14 11:15:29 - INFO - Output saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_scored.csv

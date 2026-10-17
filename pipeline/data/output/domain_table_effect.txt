@@ -1,0 +1,12 @@
+DOMAIN TABLE EFFECT (n = 1,096; proposed dictionary, r = 5, scope 2)
+
+  Reviews whose M changes because of the domain table: 334; X: 153
+  Reviews whose M changes because of the dictionary (proposed vs none): 36; X: 21
+
+                        r(M,Y)  r(X,Y)
+  with domain table      0.590   0.411
+  raw InSet              0.311   0.325
+
+  Gold standard (agreed labels): accuracy, and difference with 95% cluster-bootstrap CI
+  overall  (n = 241): with table 0.739, raw InSet 0.606; difference +0.133 [+0.081, +0.192]
+  service  (n = 119): with table 0.714, raw InSet 0.714; difference +0.000 [-0.078, +0.072]

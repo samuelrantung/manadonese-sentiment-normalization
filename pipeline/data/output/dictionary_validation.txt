@@ -1,0 +1,35 @@
+DICTIONARY VALIDATION (109 entries, two annotators)
+
+1. AGREEMENT
+  Translation correct: A {'Ya': 91, 'Tidak': 18} | B {'Ya': 107, 'Ragu': 2}
+  Accepted by both: 89 of 109 (81.7%); raw agreement 81.7%, kappa -0.017
+  Word type (n = 108 typed by both): raw agreement 90.7%, kappa 0.852
+  Entries without a type from one annotator: ['su']
+
+2. ENTRY TYPES (agreed by both annotators)
+  Manadonese              49
+  general slang           32
+  not slang               17
+  disputed or unlabeled   11
+  Substitutions (1,315) by entry type:
+    not slang                537 (40.8%)
+    general slang            379 (28.8%)
+    disputed or unlabeled    225 (17.1%)
+    Manadonese               174 (13.2%)
+
+3. EFFECT OF APPLYING THE CORRECTIONS (all 1,096 reviews)
+  Reviews whose overall polarity M changes: 10
+  Reviews whose service polarity X changes: 4
+  r(M, rating): proposed 0.5900 -> corrected 0.5912
+  r(X, rating): proposed 0.4114 -> corrected 0.4150
+  Gold overall accuracy (n = 241): proposed 0.739 -> corrected 0.743
+  Gold service accuracy (n = 119): proposed 0.714 -> corrected 0.714
+  (Removing the -nya entries changes which tokens survive stop-word removal, which runs
+   before stemming: tempatnya -> tempat is removed as a stop-word, tempatnya is kept and
+   stemmed to tempat. Token positions, negation scope and service windows shift with it.)
+
+4. RE-RUN STABILITY (entries compared with the original dictionary)
+  run1: 57 entries; Jaccard 0.31 (corpus words only 0.36); shared 39, same target in 87%
+  run2: 140 entries; Jaccard 0.32 (corpus words only 0.39); shared 60, same target in 83%
+  run3: 151 entries; Jaccard 0.27 (corpus words only 0.34); shared 56, same target in 73%
+  Entries in all four dictionaries: 30 (24 occur in the corpus): aja, ba, banget, bgt, da, depe, dorang, dpe, ga, gak, kalo, klo, kong, mar, mo, moo, nd, nda, ndak, ngana, ok, pi, pigi, sadap, so, soo, tdk, torang, yg, ygg

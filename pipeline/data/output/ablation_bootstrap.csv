@@ -1,0 +1,13 @@
+comparison,variable,diff_r_with_Y,ci95_low,ci95_high,share_of_draws_above_0
+proposed - none,M,0.028,-0.001,0.054,0.972
+proposed - none,X,0.013,-0.014,0.039,0.812
+proposed - colloquial,M,0.012,-0.014,0.038,0.794
+proposed - colloquial,X,-0.003,-0.031,0.021,0.422
+combined - colloquial,M,0.011,-0.011,0.034,0.83
+combined - colloquial,X,-0.003,-0.03,0.026,0.422
+run1 - none,M,0.027,0.003,0.049,0.984
+run1 - none,X,0.02,-0.009,0.047,0.904
+run2 - none,M,0.029,0.004,0.053,0.986
+run2 - none,X,0.025,-0.006,0.054,0.938
+run3 - none,M,0.034,0.007,0.059,0.992
+run3 - none,X,0.032,-0.001,0.061,0.971

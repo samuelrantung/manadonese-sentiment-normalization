@@ -1,0 +1,60 @@
+2026-08-29 12:36:01 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_normalized.csv
+2026-08-29 12:36:01 - INFO - Loaded 1098 rows.
+2026-08-29 12:36:01 - INFO - Stopword set built: 750 words (negation words excluded).
+2026-08-29 12:36:01 - INFO - Applying stopword removal...
+2026-08-29 12:36:01 - INFO - Dropped 3 rows that became empty after stopword removal.
+2026-08-29 12:36:01 - INFO - Stopword removal complete.
+2026-08-29 12:36:01 - INFO - Starting stemming process (this may take a while)...
+2026-08-29 12:36:01 - INFO - Stemming progress: 100/1095 rows processed.
+2026-08-29 12:36:01 - INFO - Stemming progress: 200/1095 rows processed.
+2026-08-29 12:36:01 - INFO - Stemming progress: 300/1095 rows processed.
+2026-08-29 12:36:01 - INFO - Stemming progress: 400/1095 rows processed.
+2026-08-29 12:36:01 - INFO - Stemming progress: 500/1095 rows processed.
+2026-08-29 12:36:01 - INFO - Stemming progress: 600/1095 rows processed.
+2026-08-29 12:36:01 - INFO - Stemming progress: 700/1095 rows processed.
+2026-08-29 12:36:01 - INFO - Stemming progress: 800/1095 rows processed.
+2026-08-29 12:36:01 - INFO - Stemming progress: 900/1095 rows processed.
+2026-08-29 12:36:01 - INFO - Stemming progress: 1000/1095 rows processed.
+2026-08-29 12:36:01 - INFO - Stemming progress: 1095/1095 rows processed.
+2026-08-29 12:36:01 - INFO - Stemming complete.
+2026-08-29 12:36:01 - INFO - Output saved to: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_preprocessed.csv
+2026-10-14 09:19:40 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_normalized.csv
+2026-10-14 09:19:40 - INFO - Loaded 1098 rows.
+2026-10-14 09:19:41 - INFO - Stopword set built: 750 words (negation words excluded).
+2026-10-14 09:19:41 - INFO - Applying stopword removal...
+2026-10-14 09:19:41 - INFO - Dropped 3 rows that became empty after stopword removal.
+2026-10-14 09:19:41 - INFO - Stopword removal complete.
+2026-10-14 09:19:41 - INFO - Starting stemming process (this may take a while)...
+2026-10-14 09:19:41 - INFO - Stemming progress: 100/1095 rows processed.
+2026-10-14 09:19:41 - INFO - Stemming progress: 200/1095 rows processed.
+2026-10-14 09:19:41 - INFO - Stemming progress: 300/1095 rows processed.
+2026-10-14 09:19:41 - INFO - Stemming progress: 400/1095 rows processed.
+2026-10-14 09:19:41 - INFO - Stemming progress: 500/1095 rows processed.
+2026-10-14 09:19:41 - INFO - Stemming progress: 600/1095 rows processed.
+2026-10-14 09:19:41 - INFO - Stemming progress: 700/1095 rows processed.
+2026-10-14 09:19:41 - INFO - Stemming progress: 800/1095 rows processed.
+2026-10-14 09:19:41 - INFO - Stemming progress: 900/1095 rows processed.
+2026-10-14 09:19:41 - INFO - Stemming progress: 1000/1095 rows processed.
+2026-10-14 09:19:41 - INFO - Stemming progress: 1095/1095 rows processed.
+2026-10-14 09:19:41 - INFO - Stemming complete.
+2026-10-14 09:19:41 - INFO - Output saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_preprocessed.csv
+2026-10-14 10:59:40 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_normalized.csv
+2026-10-14 10:59:40 - INFO - Loaded 1098 rows.
+2026-10-14 10:59:40 - INFO - Stopword set built: 740 words (negation, evaluative and contrast words excluded).
+2026-10-14 10:59:40 - INFO - Applying stopword removal...
+2026-10-14 10:59:40 - INFO - Dropped 2 rows that became empty after stopword removal.
+2026-10-14 10:59:40 - INFO - Stopword removal complete.
+2026-10-14 10:59:40 - INFO - Starting stemming process (this may take a while)...
+2026-10-14 10:59:40 - INFO - Stemming progress: 100/1096 rows processed.
+2026-10-14 10:59:40 - INFO - Stemming progress: 200/1096 rows processed.
+2026-10-14 10:59:40 - INFO - Stemming progress: 300/1096 rows processed.
+2026-10-14 10:59:41 - INFO - Stemming progress: 400/1096 rows processed.
+2026-10-14 10:59:41 - INFO - Stemming progress: 500/1096 rows processed.
+2026-10-14 10:59:41 - INFO - Stemming progress: 600/1096 rows processed.
+2026-10-14 10:59:41 - INFO - Stemming progress: 700/1096 rows processed.
+2026-10-14 10:59:41 - INFO - Stemming progress: 800/1096 rows processed.
+2026-10-14 10:59:41 - INFO - Stemming progress: 900/1096 rows processed.
+2026-10-14 10:59:41 - INFO - Stemming progress: 1000/1096 rows processed.
+2026-10-14 10:59:41 - INFO - Stemming progress: 1096/1096 rows processed.
+2026-10-14 10:59:41 - INFO - Stemming complete.
+2026-10-14 10:59:41 - INFO - Output saved to: /Users/sam/Documents/Pascasarjana/Research Paper/Major Revision/data/pipeline/data/output/reviews_preprocessed.csv

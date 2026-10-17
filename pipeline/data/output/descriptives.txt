@@ -1,0 +1,65 @@
+A. CORPUS (analysed sample, n = 1096)
+         reviews  restaurants
+city                         
+Bitung       318           20
+Manado       340           17
+Tomohon      438           19
+Reviews per restaurant: median 22, min 2, max 29, restaurants 56
+Star ratings: 1* 126, 2* 41, 3* 44, 4* 179, 5* 706; mean 4.18, SD 1.36
+
+B. TRANSLATION (1,098 cleaned reviews)
+  Rows still untranslated at the end of Step 3: 0 (failures were retried until all succeeded)
+  Reviews whose words changed by more than half in translation (i.e. translated from another language): 275 (25.0%)
+  Of these, Korean script: 9. Gold-sample hand check: 72 of 300 reviews (24.0%) were non-Indonesian (51 English, 21 other).
+  Manadonese markers: occurrences in the original text -> occurrences surviving translation
+    nyanda      2 ->    1
+    nda        22 ->   19
+    ndak        3 ->    3
+    torang      4 ->    4
+    dorang      2 ->    1
+    ngoni       4 ->    3
+    mar         6 ->    6
+    kong        9 ->    9
+    jo          3 ->    3
+    sadap       1 ->    0
+    makang      3 ->    3
+    dpe        17 ->   17
+    depe        4 ->    3
+    kita       17 ->   20
+    so         89 ->   25
+    mo         18 ->   14
+  'kita' (Manadonese 'I', standard 'we') is on the NLTK stop-word list: True -> it never reaches the scorer.
+
+C. DICTIONARY (proposed, 109 entries)
+  Substitutions: 1,315
+    removed as stop-word               663 (50.4%)
+    kept but unweighted                421 (32.0%)
+    carries a sentiment weight         120 (9.1%)
+    negator (reverses next words)      111 (8.4%)
+  Most frequent targets: yang 159, makanan 141, tidak 111, tempat 93, sekali 91, pelayanan 59, ok 57, sudah 54, kalau 47, enak 37, sedang 32, saja 29
+  Token-level out-of-vocabulary rate against InSet (after stop-words and stemming): 46.0% of 15,390 tokens before normalization -> 44.1% of 14,727 after
+  'tidak' tokens: 267 already in the translated text, 111 added by the dictionary (378 total before stop-word removal)
+
+D. SERVICE LEXICON
+  Terms in the submitted lexicon: 50; from the top-200 list: 27; added beyond it: 23
+  Corpus frequency of the added terms: lama 90, sopan 9, senyum 8, bantu 7, sambut 6, antar 4, siap 4, tanggap 3, judes 2, tegur 2, sikap 2, panggil 1, sapa 1, sigap 1, cuek 1, koki 1, santun 1, muka 1, info 1, lelet 0, tanya 0, tindak 0, gerak 0
+  Added terms that never occur in the corpus: 4
+  Submitted version: reviews with X != 0 triggered only by terima/kasih: 11
+  Anchor weights (InSet net -> final): ambil -5->+0, bantu -1->+2, bawa -2->+0, bayar -2->+0, cepat +0->+3, cuek -4->-4, hidang +2->+0, info -3->+0, judes -4->-4, kasih +1->+1, kerja +2->+0, lama -4->-4, lambat +1->-3, langgan +2->+0, langsung +3->+0, milik +1->+0, panggil -1->+0, pesan -1->+0, proses +1->+0, ramah +2->+4, saji +4->+0, sambut +3->+3, santun +2->+2, sedia +2->+0, senyum +1->+1, siap +1->+0, sigap +1->+1, sikap +2->+0, sopan +0->+3, tanggap +3->+3, tegur -1->-2, terima +2->+2, tunggu -1->+0
+
+E. TOP CONTRIBUTORS TO M (summed signed weight over the corpus)
+  Before (raw InSet, negators scored)
+    negative: tidak -1815, babi -316, lama -312, bagus -304, minum -219, restoran -168, buruk -160, kurang -156, pilih -120, kuning -120, biasa -98, pesan -94, bakar -86, goreng -81, anak -81, ruang -81, tawar -76, masuk -66, tradisional -65, kafe -64
+    positive: enak 472, nyaman 428, suasana 392, baik 348, harga 297, saji 224, ok 216, ramah 202, nikmat 171, lezat 165, nasi 150, porsi 132, pas 123, khas 120, suka 112, segar 104, rumah 84, luas 84, tidak (negated) 80, ya 80
+  After (domain table, negators not scored)
+    negative: lama -312, buruk -160, biasa -98, tawar -76, enak (negated) -68, kecewa -54, kosong -52, beda -50, mahal -46, lapar -45, ramah (negated) -44, bad -40, lambat -39, belah -35, tua -32, jelek -30, alami -30, jutek -30, bahasa -28, hitam -28
+    positive: enak 1888, bagus 456, nyaman 428, ramah 404, baik 348, ok 216, rekomendasi 207, cepat 192, cocok 192, bersih 177, nikmat 171, lezat 165, indah 138, pas 123, khas 120, senang 120, suka 112, segar 104, jangkau 93, luas 84
+
+F. MULTIWORD EXPRESSIONS (translated text, before Step 4 and stop-word removal)
+  bukan main        0
+  tidak hanya       2
+  kurang lebih      3
+  tidak kalah       1
+  terima kasih     19
+  salah satu       33
+  ('salah satu' is rewritten to 'satu' in Step 4; 'terima'/'kasih' are no longer service anchors)

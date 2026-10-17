@@ -1,0 +1,21 @@
+[2026-08-29 11:58:47] Step 2 - Cleaning                  : 1,367 → 1,098 rows retained (80.3%)
+[2026-08-29 12:35:46] Step 3 - Translation               : 1,098 rows translated to Bahasa Indonesia | top_words_raw.csv exported (300 words)
+[2026-08-29 12:36:00] Step 4 - Dialect Normalization     : 1,315 substitutions across 584 rows (53.2% of corpus)
+[2026-08-29 12:36:01] Step 5 - Text Preprocessing        : 1,098 → 1,095 rows (1,095 stemmed, 0 skipped, 3 dropped empty)
+[2026-08-29 12:36:03] Step 6 - Extract Top Words         : Top 200 of 2,924 unique words extracted from 1,095 rows
+[2026-08-29 12:36:03] Step 7 - Sentiment Scoring         : 1,095 rows scored | M (customer satisfaction): 552 pos / 445 neg / 98 neu | X (ABSA): 273 pos / 234 neg / 588 absent
+[2026-08-29 12:36:44] Step 8 - OLS Regression            : 1,095 rows analysed (dropped 0) | Model 1 R²: 0.3227 | Model 2 R²: 0.1491 | H4 Mediation: SUPPORTED
+[2026-10-14 09:19:40] Step 4 - Dialect Normalization     : 1,315 substitutions across 584 rows (53.2% of corpus)
+[2026-10-14 09:19:41] Step 5 - Text Preprocessing        : 1,098 → 1,095 rows (1,095 stemmed, 0 skipped, 3 dropped empty)
+[2026-10-14 09:19:42] Step 6 - Extract Top Words         : Top 200 of 2,924 unique words extracted from 1,095 rows
+[2026-10-14 09:19:43] Step 7 - Sentiment Scoring         : 1,095 rows scored | M (customer satisfaction): 552 pos / 445 neg / 98 neu | X (ABSA): 273 pos / 234 neg / 588 absent
+[2026-10-14 09:19:51] Step 8 - OLS Regression            : 1,095 rows analysed (dropped 0) | Model 1 R²: 0.3227 | Model 2 R²: 0.1491 | H4 Mediation: SUPPORTED
+[2026-10-14 09:29:09] Step 7 - Sentiment Scoring         : 1,095 rows scored | M (customer satisfaction): 630 pos / 355 neg / 110 neu | X (ABSA): 303 pos / 181 neg / 611 absent
+[2026-10-14 09:29:11] Step 8 - OLS Regression            : 1,095 rows analysed (dropped 0) | Model 1 R²: 0.3064 | Model 2 R²: 0.0868 | H4 Mediation: SUPPORTED
+[2026-10-14 10:15:54] Step 7 - Sentiment Scoring         : 1,095 rows scored | M (customer satisfaction): 763 pos / 171 neg / 161 neu | X (ABSA): 344 pos / 120 neg / 631 absent
+[2026-10-14 10:15:56] Step 8 - OLS Regression            : 1,095 rows analysed (dropped 0) | Model 1 R²: 0.3228 | Model 2 R²: 0.2722 | H4 Mediation: SUPPORTED
+[2026-10-14 10:59:41] Step 5 - Text Preprocessing        : 1,098 → 1,096 rows (1,096 stemmed, 0 skipped, 2 dropped empty)
+[2026-10-14 10:59:41] Step 7 - Sentiment Scoring         : 1,096 rows scored | M (customer satisfaction): 759 pos / 194 neg / 143 neu | X (ABSA): 341 pos / 151 neg / 604 absent
+[2026-10-14 10:59:42] Step 8 - OLS Regression            : 1,096 rows analysed (dropped 0) | Model 1 R²: 0.3673 | Model 2 R²: 0.3100 | H4 Mediation: SUPPORTED
+[2026-10-14 11:15:29] Step 7 - Sentiment Scoring         : 1,096 rows scored | M (customer satisfaction): 797 pos / 188 neg / 111 neu | X (ABSA): 353 pos / 149 neg / 594 absent
+[2026-10-14 11:15:30] Step 8 - OLS Regression            : 1,096 rows analysed (dropped 0) | Model 1 R²: 0.3534 | Model 2 R²: 0.3538 | H4 Mediation: SUPPORTED

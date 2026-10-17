@@ -1,0 +1,6 @@
+model,predictor,coefficient,std_error,t_stat,p_value,ci_lower,ci_upper
+Model 1 (X→M),const,0.425,0.0194,21.8843,0.0,0.3869,0.4631
+Model 1 (X→M),service_quality_X,0.7018,0.0287,24.4543,0.0,0.6455,0.7581
+Model 2 (X+M→Y),const,3.6245,0.0411,88.2411,0.0,3.5439,3.7051
+Model 2 (X+M→Y),service_quality_X,0.1953,0.0629,3.102,0.002,0.0718,0.3188
+Model 2 (X+M→Y),customer_satisfaction_M,0.9421,0.0533,17.6673,0.0,0.8375,1.0467

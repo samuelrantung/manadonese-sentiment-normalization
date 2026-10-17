@@ -1,0 +1,8 @@
+2026-08-29 11:58:47 - INFO - Loading dataset from: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/input/all_reviews_raw.csv
+2026-08-29 11:58:47 - INFO - Loaded 1367 rows.
+2026-08-29 11:58:47 - INFO - After dropping null review_text  : 1367 rows (0 removed)
+2026-08-29 11:58:47 - INFO - After dropping invalid rating    : 1367 rows (0 removed)
+2026-08-29 11:58:47 - INFO - After word count filter (< 3)    : 1098 rows (269 removed)
+2026-08-29 11:58:47 - INFO - After removing duplicates        : 1098 rows (0 removed)
+2026-08-29 11:58:47 - INFO - Summary: 1098 / 1367 rows retained (80.3%)
+2026-08-29 11:58:47 - INFO - Output saved to: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_cleaned.csv

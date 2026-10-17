@@ -1,0 +1,221 @@
+2026-08-29 12:03:59 - INFO - Loading input from: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_cleaned.csv
+2026-08-29 12:03:59 - INFO - Total rows: 1098 | Already translated: 0 | Remaining: 1098
+2026-08-29 12:04:10 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:04:10 - WARNING - Row 2: translation unavailable. Will retry on next run.
+2026-08-29 12:04:18 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:04:18 - WARNING - Row 4: translation unavailable. Will retry on next run.
+2026-08-29 12:04:27 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:04:27 - WARNING - Row 6: translation unavailable. Will retry on next run.
+2026-08-29 12:04:38 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:04:38 - WARNING - Row 13: translation unavailable. Will retry on next run.
+2026-08-29 12:05:04 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:05:04 - WARNING - Row 32: translation unavailable. Will retry on next run.
+2026-08-29 12:05:18 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:05:18 - WARNING - Row 45: translation unavailable. Will retry on next run.
+2026-08-29 12:05:26 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:05:26 - WARNING - Row 47: translation unavailable. Will retry on next run.
+2026-08-29 12:05:35 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:05:35 - WARNING - Row 53: translation unavailable. Will retry on next run.
+2026-08-29 12:05:38 - INFO - Session progress: 50 translated | Total done: 50/1098. Auto-saving...
+2026-08-29 12:05:45 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:05:45 - WARNING - Row 59: translation unavailable. Will retry on next run.
+2026-08-29 12:06:00 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:06:00 - WARNING - Row 71: translation unavailable. Will retry on next run.
+2026-08-29 12:06:08 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:06:08 - WARNING - Row 74: translation unavailable. Will retry on next run.
+2026-08-29 12:06:23 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:06:23 - WARNING - Row 87: translation unavailable. Will retry on next run.
+2026-08-29 12:06:31 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:06:31 - WARNING - Row 91: translation unavailable. Will retry on next run.
+2026-08-29 12:06:54 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:06:54 - WARNING - Row 103: translation unavailable. Will retry on next run.
+2026-08-29 12:07:01 - INFO - Session progress: 100 translated | Total done: 100/1098. Auto-saving...
+2026-08-29 12:07:11 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:07:11 - WARNING - Row 118: translation unavailable. Will retry on next run.
+2026-08-29 12:07:30 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:07:30 - WARNING - Row 126: translation unavailable. Will retry on next run.
+2026-08-29 12:07:37 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:07:37 - WARNING - Row 128: translation unavailable. Will retry on next run.
+2026-08-29 12:07:44 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:07:44 - WARNING - Row 129: translation unavailable. Will retry on next run.
+2026-08-29 12:08:00 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:08:00 - WARNING - Row 133: translation unavailable. Will retry on next run.
+2026-08-29 12:08:37 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:08:37 - WARNING - Row 149: translation unavailable. Will retry on next run.
+2026-08-29 12:08:49 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:08:49 - WARNING - Row 152: translation unavailable. Will retry on next run.
+2026-08-29 12:08:56 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:08:56 - WARNING - Row 153: translation unavailable. Will retry on next run.
+2026-08-29 12:09:04 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:09:04 - WARNING - Row 155: translation unavailable. Will retry on next run.
+2026-08-29 12:09:27 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:09:27 - WARNING - Row 167: translation unavailable. Will retry on next run.
+2026-08-29 12:09:36 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:09:36 - WARNING - Row 171: translation unavailable. Will retry on next run.
+2026-08-29 12:09:38 - INFO - Session progress: 150 translated | Total done: 150/1098. Auto-saving...
+2026-08-29 12:09:47 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:09:47 - WARNING - Row 180: translation unavailable. Will retry on next run.
+2026-08-29 12:10:18 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:10:18 - WARNING - Row 212: translation unavailable. Will retry on next run.
+2026-08-29 12:10:27 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:10:27 - WARNING - Row 217: translation unavailable. Will retry on next run.
+2026-08-29 12:10:36 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:10:36 - WARNING - Row 220: translation unavailable. Will retry on next run.
+2026-08-29 12:10:58 - INFO - Session progress: 200 translated | Total done: 200/1098. Auto-saving...
+2026-08-29 12:11:11 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:11:11 - WARNING - Row 240: translation unavailable. Will retry on next run.
+2026-08-29 12:11:48 - INFO - Session progress: 250 translated | Total done: 250/1098. Auto-saving...
+2026-08-29 12:12:31 - INFO - Session progress: 300 translated | Total done: 300/1098. Auto-saving...
+2026-08-29 12:12:52 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:12:52 - WARNING - Row 345: translation unavailable. Will retry on next run.
+2026-08-29 12:13:00 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:13:00 - WARNING - Row 347: translation unavailable. Will retry on next run.
+2026-08-29 12:13:11 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:13:11 - WARNING - Row 356: translation unavailable. Will retry on next run.
+2026-08-29 12:13:31 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:13:31 - WARNING - Row 363: translation unavailable. Will retry on next run.
+2026-08-29 12:14:04 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:14:04 - WARNING - Row 379: translation unavailable. Will retry on next run.
+2026-08-29 12:14:09 - INFO - Session progress: 350 translated | Total done: 350/1098. Auto-saving...
+2026-08-29 12:14:41 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:14:41 - WARNING - Row 408: translation unavailable. Will retry on next run.
+2026-08-29 12:14:55 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:14:55 - WARNING - Row 417: translation unavailable. Will retry on next run.
+2026-08-29 12:15:05 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:15:05 - WARNING - Row 423: translation unavailable. Will retry on next run.
+2026-08-29 12:15:15 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:15:15 - WARNING - Row 428: translation unavailable. Will retry on next run.
+2026-08-29 12:15:28 - INFO - Session progress: 400 translated | Total done: 400/1098. Auto-saving...
+2026-08-29 12:15:46 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:15:46 - WARNING - Row 455: translation unavailable. Will retry on next run.
+2026-08-29 12:16:06 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:16:06 - WARNING - Row 465: translation unavailable. Will retry on next run.
+2026-08-29 12:16:15 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:16:15 - WARNING - Row 467: translation unavailable. Will retry on next run.
+2026-08-29 12:16:45 - INFO - Session progress: 450 translated | Total done: 450/1098. Auto-saving...
+2026-08-29 12:17:04 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:17:04 - WARNING - Row 500: translation unavailable. Will retry on next run.
+2026-08-29 12:18:02 - INFO - Session progress: 500 translated | Total done: 500/1098. Auto-saving...
+2026-08-29 12:18:27 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:18:27 - WARNING - Row 554: translation unavailable. Will retry on next run.
+2026-08-29 12:18:34 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:18:34 - WARNING - Row 555: translation unavailable. Will retry on next run.
+2026-08-29 12:18:48 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:18:48 - WARNING - Row 560: translation unavailable. Will retry on next run.
+2026-08-29 12:19:45 - INFO - Session progress: 550 translated | Total done: 550/1098. Auto-saving...
+2026-08-29 12:20:17 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:20:17 - WARNING - Row 634: translation unavailable. Will retry on next run.
+2026-08-29 12:20:25 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:20:25 - WARNING - Row 636: translation unavailable. Will retry on next run.
+2026-08-29 12:20:39 - INFO - Session progress: 600 translated | Total done: 600/1098. Auto-saving...
+2026-08-29 12:21:01 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:21:01 - WARNING - Row 663: translation unavailable. Will retry on next run.
+2026-08-29 12:21:13 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:21:13 - WARNING - Row 666: translation unavailable. Will retry on next run.
+2026-08-29 12:21:44 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:21:44 - WARNING - Row 699: translation unavailable. Will retry on next run.
+2026-08-29 12:21:45 - INFO - Session progress: 650 translated | Total done: 650/1098. Auto-saving...
+2026-08-29 12:22:31 - INFO - Session progress: 700 translated | Total done: 700/1098. Auto-saving...
+2026-08-29 12:22:47 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:22:47 - WARNING - Row 766: translation unavailable. Will retry on next run.
+2026-08-29 12:23:20 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:23:20 - WARNING - Row 793: translation unavailable. Will retry on next run.
+2026-08-29 12:23:30 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:23:30 - WARNING - Row 799: translation unavailable. Will retry on next run.
+2026-08-29 12:23:32 - INFO - Session progress: 750 translated | Total done: 750/1098. Auto-saving...
+2026-08-29 12:24:17 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:24:17 - WARNING - Row 816: translation unavailable. Will retry on next run.
+2026-08-29 12:24:54 - INFO - Session progress: 800 translated | Total done: 800/1098. Auto-saving...
+2026-08-29 12:25:12 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:25:12 - WARNING - Row 865: translation unavailable. Will retry on next run.
+2026-08-29 12:25:24 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:25:24 - WARNING - Row 872: translation unavailable. Will retry on next run.
+2026-08-29 12:25:58 - INFO - Session progress: 850 translated | Total done: 850/1098. Auto-saving...
+2026-08-29 12:26:43 - INFO - Session progress: 900 translated | Total done: 900/1098. Auto-saving...
+2026-08-29 12:27:30 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:27:30 - WARNING - Row 1006: translation unavailable. Will retry on next run.
+2026-08-29 12:27:32 - INFO - Session progress: 950 translated | Total done: 950/1098. Auto-saving...
+2026-08-29 12:27:54 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:27:54 - WARNING - Row 1018: translation unavailable. Will retry on next run.
+2026-08-29 12:29:00 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:29:00 - WARNING - Row 1057: translation unavailable. Will retry on next run.
+2026-08-29 12:29:01 - INFO - Session progress: 1000 translated | Total done: 1000/1098. Auto-saving...
+2026-08-29 12:29:39 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:29:39 - WARNING - Row 1097: translation unavailable. Will retry on next run.
+2026-08-29 12:29:39 - INFO - Progress saved. 1037 rows translated this session.
+2026-08-29 12:29:39 - WARNING - 61 rows could not be translated this session and remain unmarked. Re-run this step to retry them.
+2026-08-29 12:29:39 - INFO - Translation incomplete (61 rows remaining). Re-run to continue from where it stopped.
+2026-08-29 12:30:06 - INFO - Existing output found. Resuming from: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_translated.csv
+2026-08-29 12:30:06 - INFO - Total rows: 1098 | Already translated: 1037 | Remaining: 61
+2026-08-29 12:30:38 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:30:38 - WARNING - Row 103: translation unavailable. Will retry on next run.
+2026-08-29 12:30:45 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:30:45 - WARNING - Row 118: translation unavailable. Will retry on next run.
+2026-08-29 12:30:52 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:30:52 - WARNING - Row 126: translation unavailable. Will retry on next run.
+2026-08-29 12:30:59 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:30:59 - WARNING - Row 128: translation unavailable. Will retry on next run.
+2026-08-29 12:31:06 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:31:06 - WARNING - Row 129: translation unavailable. Will retry on next run.
+2026-08-29 12:31:13 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:31:13 - WARNING - Row 133: translation unavailable. Will retry on next run.
+2026-08-29 12:31:20 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:31:20 - WARNING - Row 149: translation unavailable. Will retry on next run.
+2026-08-29 12:31:27 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:31:27 - WARNING - Row 152: translation unavailable. Will retry on next run.
+2026-08-29 12:31:35 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:31:35 - WARNING - Row 155: translation unavailable. Will retry on next run.
+2026-08-29 12:31:42 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:31:42 - WARNING - Row 167: translation unavailable. Will retry on next run.
+2026-08-29 12:31:49 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:31:49 - WARNING - Row 171: translation unavailable. Will retry on next run.
+2026-08-29 12:32:05 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:32:05 - WARNING - Row 240: translation unavailable. Will retry on next run.
+2026-08-29 12:32:12 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:32:12 - WARNING - Row 345: translation unavailable. Will retry on next run.
+2026-08-29 12:32:19 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:32:19 - WARNING - Row 347: translation unavailable. Will retry on next run.
+2026-08-29 12:32:26 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:32:26 - WARNING - Row 356: translation unavailable. Will retry on next run.
+2026-08-29 12:32:38 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:32:38 - WARNING - Row 408: translation unavailable. Will retry on next run.
+2026-08-29 12:33:17 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:33:17 - WARNING - Row 554: translation unavailable. Will retry on next run.
+2026-08-29 12:33:24 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:33:24 - WARNING - Row 555: translation unavailable. Will retry on next run.
+2026-08-29 12:33:32 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:33:32 - WARNING - Row 634: translation unavailable. Will retry on next run.
+2026-08-29 12:33:39 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:33:39 - WARNING - Row 636: translation unavailable. Will retry on next run.
+2026-08-29 12:33:53 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:33:53 - WARNING - Row 666: translation unavailable. Will retry on next run.
+2026-08-29 12:34:28 - INFO - Progress saved. 40 rows translated this session.
+2026-08-29 12:34:28 - WARNING - 21 rows could not be translated this session and remain unmarked. Re-run this step to retry them.
+2026-08-29 12:34:28 - INFO - Translation incomplete (21 rows remaining). Re-run to continue from where it stopped.
+2026-08-29 12:34:29 - INFO - Existing output found. Resuming from: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_translated.csv
+2026-08-29 12:34:29 - INFO - Total rows: 1098 | Already translated: 1077 | Remaining: 21
+2026-08-29 12:34:35 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:34:35 - WARNING - Row 103: translation unavailable. Will retry on next run.
+2026-08-29 12:35:11 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:35:11 - WARNING - Row 634: translation unavailable. Will retry on next run.
+2026-08-29 12:35:18 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:35:18 - WARNING - Row 636: translation unavailable. Will retry on next run.
+2026-08-29 12:35:25 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:35:25 - WARNING - Row 666: translation unavailable. Will retry on next run.
+2026-08-29 12:35:26 - INFO - Progress saved. 17 rows translated this session.
+2026-08-29 12:35:26 - WARNING - 4 rows could not be translated this session and remain unmarked. Re-run this step to retry them.
+2026-08-29 12:35:26 - INFO - Translation incomplete (4 rows remaining). Re-run to continue from where it stopped.
+2026-08-29 12:35:27 - INFO - Existing output found. Resuming from: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_translated.csv
+2026-08-29 12:35:27 - INFO - Total rows: 1098 | Already translated: 1094 | Remaining: 4
+2026-08-29 12:35:37 - WARNING -   translation failed after 3 attempts (error-page response)
+2026-08-29 12:35:37 - WARNING - Row 634: translation unavailable. Will retry on next run.
+2026-08-29 12:35:42 - INFO - Progress saved. 3 rows translated this session.
+2026-08-29 12:35:42 - WARNING - 1 rows could not be translated this session and remain unmarked. Re-run this step to retry them.
+2026-08-29 12:35:42 - INFO - Translation incomplete (1 rows remaining). Re-run to continue from where it stopped.
+2026-08-29 12:35:43 - INFO - Existing output found. Resuming from: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_translated.csv
+2026-08-29 12:35:43 - INFO - Total rows: 1098 | Already translated: 1097 | Remaining: 1
+2026-08-29 12:35:45 - INFO - Progress saved. 1 rows translated this session.
+2026-08-29 12:35:45 - INFO - All rows translated. Applying post-translation text processing...
+2026-08-29 12:35:45 - INFO - Translation complete. 1098 rows saved to: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_translated.csv
+2026-08-29 12:35:45 - INFO - Extracting top 300 raw words from: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/output/reviews_translated.csv
+2026-08-29 12:35:46 - INFO - Top 300 raw words saved to: /Users/sam/Documents/Pascasarjana/Research Paper/pipeline/data/input/top_words_raw.csv
