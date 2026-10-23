@@ -2,8 +2,10 @@
 Descriptive analyses requested in review (corpus, translation, dictionary, lexicon).
 
   A. Corpus: reviews per city and per restaurant; star-rating distribution        (B-D28)
-  B. Translation: reviews changed by translation; estimated language mix;
-     Manadonese markers before and after translation; the false friend 'kita'     (B-D8, D29, D31)
+  B. Translation: reviews changed by translation; estimated language mix and its
+     validation (overlap distribution, threshold sensitivity, agreement with the
+     annotators' language labels); Manadonese markers before and after
+     translation; the false friend 'kita'                                          (B-D8, D29, D31)
   C. Dictionary: share of substitutions that are effective; token-level InSet
      out-of-vocabulary rate before and after normalization; provenance of 'tidak' (B-D14, D16, D36)
   D. Service lexicon: corpus frequency of the terms added beyond the top-200 list;
@@ -34,6 +36,7 @@ from ablation import Preprocessor, load_json, normalize                  # noqa:
 
 INPUT = os.path.join(BASE_DIR, 'data', 'input')
 OUTPUT = os.path.join(BASE_DIR, 'data', 'output')
+ANNOTATION = os.path.join(BASE_DIR, 'annotation')
 # Outputs of the submitted version, kept unchanged for comparison
 SUBMITTED = os.path.join(BASE_DIR, 'data', 'submitted_version')
 KEY = ['review_author', 'google_id', 'review_date']
@@ -111,6 +114,23 @@ def main():
     hangul = cleaned['review_text'].astype(str).str.contains(r'[가-힯]').sum()
     p(f'  Of these, Korean script: {hangul}. Gold-sample hand check: 72 of 300 reviews (24.0%) were '
       f'non-Indonesian (51 English, 21 other).')
+    # Validation of the estimate (B-D8): the detected language was not recorded, so the
+    # word-overlap rule is checked against its own distribution and the annotators' labels
+    p(f'  Word overlap after translation: under 10% in {sum(o < 0.1 for o in overlap)} reviews, '
+      f'at least 90% in {sum(o >= 0.9 for o in overlap)}, in between in '
+      f'{sum(0.1 <= o < 0.9 for o in overlap)}')
+    p('  Threshold sensitivity (reviews with overlap below t): ' + ', '.join(
+        f't = {t:.1f}: {sum(o < t for o in overlap)}' for t in (0.3, 0.4, 0.5, 0.6, 0.7)))
+    gold = pd.read_csv(os.path.join(ANNOTATION, 'gold_sample_key.csv')).merge(
+        pd.read_csv(os.path.join(ANNOTATION, 'merged_labels.csv'))[['review_id', 'language']],
+        on='review_id')
+    g_o = gold['original_text'].map(lambda t: set(words(t)))
+    g_t = gold['translated_text'].map(lambda t: set(words(t)))
+    flagged = pd.Series([(len(a & b) / len(a) if a else 1.0) < 0.5 for a, b in zip(g_o, g_t)])
+    foreign = gold['language'] != 'Indonesia/Manado'
+    p(f'  Gold sample, rule (t = 0.5) vs annotators\' language labels: flags {(flagged & foreign).sum()} '
+      f'of {foreign.sum()} non-Indonesian reviews and {(flagged & ~foreign).sum()} of '
+      f'{(~foreign).sum()} Indonesian/Manadonese reviews')
     p('  Manadonese markers: occurrences in the original text -> occurrences surviving translation')
     for m in MANADO_MARKERS:
         a = sum(Counter(words(t))[m] for t in cleaned['review_text'])

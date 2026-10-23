@@ -11,6 +11,9 @@ B. TRANSLATION (1,098 cleaned reviews)
   Rows still untranslated at the end of Step 3: 0 (failures were retried until all succeeded)
   Reviews whose words changed by more than half in translation (i.e. translated from another language): 275 (25.0%)
   Of these, Korean script: 9. Gold-sample hand check: 72 of 300 reviews (24.0%) were non-Indonesian (51 English, 21 other).
+  Word overlap after translation: under 10% in 201 reviews, at least 90% in 725, in between in 172
+  Threshold sensitivity (reviews with overlap below t): t = 0.3: 253, t = 0.4: 265, t = 0.5: 275, t = 0.6: 290, t = 0.7: 311
+  Gold sample, rule (t = 0.5) vs annotators' language labels: flags 66 of 72 non-Indonesian reviews and 7 of 228 Indonesian/Manadonese reviews
   Manadonese markers: occurrences in the original text -> occurrences surviving translation
     nyanda      2 ->    1
     nda        22 ->   19
