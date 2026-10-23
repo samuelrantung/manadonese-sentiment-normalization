@@ -91,3 +91,12 @@ ROBUSTNESS CHECKS  (n = 1096 reviews, 56 restaurants; SEs clustered by restauran
     x        OLS b =  0.480 (SE 0.099, p = 0.0000)   ordered logit =  0.727 (SE 0.141, p = 0.0000, OR 2.07)
     m        OLS b =  0.738 (SE 0.084, p = 0.0000)   ordered logit =  1.058 (SE 0.118, p = 0.0000, OR 2.88)
     mention  OLS b = -0.640 (SE 0.108, p = 0.0000)   ordered logit = -0.903 (SE 0.186, p = 0.0000, OR 0.41)
+
+9. MAIN RQ3 MODEL, SERVICE SENTIMENT AS CATEGORIES: Y ~ service + M_rest (reference = no service mention)
+  none 550, positive 353, negative 149, balanced 44
+    service[T.balanced]          b =  -0.931   SE = 0.262   p = 0.0004
+    service[T.negative]          b =  -1.808   SE = 0.150   p = 0.0000
+    service[T.positive]          b =   0.290   SE = 0.089   p = 0.0011
+    m_rest                       b =   0.542   SE = 0.062   p = 0.0000
+      R2 = 0.369
+  Implied by the linear model in section 8: positive +0.280, negative -1.832, balanced -0.776

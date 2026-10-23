@@ -8,6 +8,9 @@ Uses the main pipeline output (reviews_preprocessed.csv) and the Step 7 scoring 
   4. Functional form: categorical X/M dummies, and raw (continuous) scores
   5. Ordered logit for the 1-5 star rating
   6. Cluster-bootstrap confidence interval for the indirect effect a x b
+  7. Cross-tabulations of M and X by star rating
+  8. Main RQ3 models: Y ~ X + M_rest + S (and the comparison with M)
+  9. Main RQ3 model with service sentiment as categories (none / positive / negative / balanced)
 Every regression uses standard errors clustered by restaurant (google_id).
 
 Report: data/output/robustness_checks.txt
@@ -328,6 +331,29 @@ def main():
                 f"ordered logit = {om.params[c]:6.3f} (SE {om.bse[c]:.3f}, p = {om.pvalues[c]:.4f}, "
                 f"OR {np.exp(om.params[c]):.2f})"
             )
+
+    # ---- 9. main RQ3 model with service sentiment as categories (B-D34) ----
+    p(
+        "\n9. MAIN RQ3 MODEL, SERVICE SENTIMENT AS CATEGORIES: Y ~ service + M_rest (reference = no service mention)"
+    )
+    d["service"] = np.where(
+        d["mention"] == 0,
+        "none",
+        d["x"].map({1: "positive", -1: "negative", 0: "balanced"}),
+    )
+    p("  " + ", ".join(f"{k} {v}" for k, v in d["service"].value_counts().items()))
+    svc = cluster_ols("y ~ C(service, Treatment('none')) + m_rest", d)
+    for t in svc.params.index[1:]:
+        p(
+            "  "
+            + coef_line(svc, t, t.replace("C(service, Treatment('none'))", "service"))
+        )
+    p(f"      R2 = {svc.rsquared:.3f}")
+    lin = cluster_ols("y ~ x + m_rest + mention", d)
+    p(
+        f"  Implied by the linear model in section 8: positive {lin.params['mention'] + lin.params['x']:+.3f}, "
+        f"negative {lin.params['mention'] - lin.params['x']:+.3f}, balanced {lin.params['mention']:+.3f}"
+    )
 
     text = "\n".join(out)
     with open(REPORT, "w", encoding="utf-8") as f:
